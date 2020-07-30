@@ -1,20 +1,21 @@
 import React from "react"
-import { Box, Grid } from "@chakra-ui/core"
+import { Box } from "@chakra-ui/core"
+
+import Social from "./social"
 import Header from "./header"
-import Menu from "./menu"
 
 import "../assets/style.css"
 
 const Layout = ({ children }) => (
   <div>
-    <Grid style={{ margin: `0 auto` }} maxW="90%" w={900} alignSelf="center">
-      <Box mb={10} mt={20}>
-        <Header />
-      </Box>
-      <Menu />
+    <Header />
 
-      <Box mb={100}>{children}</Box>
-    </Grid>
+    <Box mx="4" mb={100}>
+      {children}
+    </Box>
+    <Box>
+      <Social />
+    </Box>
   </div>
 )
 

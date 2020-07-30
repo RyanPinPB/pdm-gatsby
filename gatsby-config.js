@@ -9,8 +9,8 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby WordPress Tutorial`,
-    description: `An example to learn how to source data from WordPress.`,
+    title: `Pearson Digital Marketing`,
+    description: `Web development and digital marketing services in San Diego, CA.`,
     author: `@ryanpinpb`,
   },
   plugins: [
@@ -68,10 +68,10 @@ module.exports = {
         description: `Web development and digital marketing services in San Diego, CA.`,
         lang: `en`,
         display: `standalone`,
-        icon: `src/assets/svg/favicon.svg`,
+        icon: `src/assets/svg/favicon.inline.svg`,
         // icons: [
         //   {
-        //     src: `src/assets/svg/favicon.svg`,
+        //     src: `src/assets/svg/favicon.inline.svg`,
         //     sizes: `192x192`,
         //     type: `image/svg+xml`,
         //   },

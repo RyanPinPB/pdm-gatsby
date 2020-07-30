@@ -3,13 +3,22 @@ import { graphql, Link, navigate } from "gatsby"
 import Img from "gatsby-image"
 import ReactPaginate from "react-paginate"
 
-import { Stack, Box, Heading, Text, Grid, Button } from "@chakra-ui/core"
+import {
+  Stack,
+  Box,
+  Heading,
+  Text,
+  Grid,
+  Button,
+  CSSReset,
+} from "@chakra-ui/core"
 
 import Layout from "../components/layout"
 import { normalizePath } from "../utils/get-url-path"
 
 export default ({ data, pageContext }) => (
   <Layout>
+    <CSSReset />
     <Stack spacing={5}>
       {data.allWpPost.nodes.map((page) => (
         <Box key={page.link}>

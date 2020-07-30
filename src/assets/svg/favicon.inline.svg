@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="isolation:isolate" viewBox="0 0 472 472" width="472pt" height="472pt">
+<style>
+.logo-rect, .logo-circle {
+      fill: black;
+      stroke: black;
+    }
+    @media (prefers-color-scheme: dark) {
+      .logo-rect, .logo-circle {
+        fill: white;
+        stroke: white;
+      }
+    }
+</style>
+<defs><clipPath id="_clipPath_F0g9461iddNI66yfkwhvgJ9L6U8slMYe"><rect width="472" height="472"/></clipPath></defs><g clip-path="url(#_clipPath_F0g9461iddNI66yfkwhvgJ9L6U8slMYe)"><rect className='logo-rect' x="0" y="0" width="272" height="472" transform="matrix(1,0,0,1,0,0)" fill="rgb(0,0,0)"/><circle className='logo-circle' vector-effect="non-scaling-stroke" cx="272" cy="200.0000000000001" r="200.0000000000001" fill="rgb(0,0,0)"/></g></svg>
