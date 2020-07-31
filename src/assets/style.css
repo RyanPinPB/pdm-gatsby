@@ -47,3 +47,56 @@
 .pagination .previous {
   justify-self: start;
 }
+
+.logo-rect,
+.logo-circle {
+  transform: rotate(0deg) matrix(1, 0, 0, 1, 0, 0);
+  transition: transform 0.3s ease-in-out 0.3s, width 0.3s ease-in-out 0.3s;
+}
+
+.active .logo-rect {
+  transform: rotate(90deg) matrix(0.1, 0, 0, 4, 500, -2000);
+  transition: transform 0.3s ease-in-out 0s, width 0.3s ease-in-out 0s;
+}
+
+.active .logo-circle {
+  transform: rotate(0deg) matrix(0.5, 0, 0, 0.5, 1394, 234);
+  transition: transform 0.3s ease-in-out 0s, width 0.3s ease-in-out 0s;
+}
+
+.logo-container {
+  /* display: flex;
+  width: fit-content; */
+  height: 24px;
+  line-height: 1;
+}
+
+.logo-container::after {
+  display: flex;
+  width: fit-content;
+  font-size: 1.2rem;
+  font-weight: 700;
+  height: 24px;
+  line-height: 1;
+  content: "PEARSON";
+  transform: translate3d(8%, -100px, 0);
+  opacity: 0;
+  transition: transform 0.3s ease-in-out 0.3s, opacity 0.3s ease-in-out 0.3s;
+}
+
+.active .logo-container::after {
+  transform: translate3d(8%, -17px, 0);
+  opacity: 1;
+  transition: transform 0s ease-in-out 0.2s, opacity 0.3s ease-in-out 0s;
+}
+
+.site-header {
+  transition: border 0.3s ease-in-out;
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 0) !important;
+}
+
+.site-header.active {
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1) !important;
+}

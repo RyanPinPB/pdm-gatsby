@@ -7,30 +7,30 @@ const Header = (props) => {
   const { colorMode, toggleColorMode } = useColorMode()
   return (
     <Box
+      className="site-header"
       position="fixed"
       d="flex"
       alignItems="center"
       justifyContent="space-between"
       w="100%"
-      px="4"
-      flex
+      p="4"
+      top="0"
       as="header"
       borderBottom="black"
+      zIndex="100"
     >
-      <Link to="/">
-        <Box maxW={50}>
-          <Icon
-            w="6"
-            h="6"
-            name="logo"
-            color={colorMode === "light" ? "brand.100" : "brand.900"}
-          />
-        </Box>
+      <Link className="logo-container" to="/">
+        <Icon
+          w="6"
+          h="6"
+          name="logo"
+          color={colorMode === "light" ? "brand.100" : "brand.900"}
+        />
       </Link>
       <Box as="nav">
         <Menu />
       </Box>
-      <Button onClick={toggleColorMode}>
+      <Button w="6" h="6" bg="transparent" onClick={toggleColorMode}>
         {colorMode === "light" ? <Icon name="moon" /> : <Icon name="sun" />}
       </Button>
     </Box>

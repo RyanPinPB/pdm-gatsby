@@ -1,46 +1,117 @@
 import React from "react"
-// import { Link } from "gatsby"
-
-import Layout from "../components/layout"
 import {
   Box,
-  useColorMode,
+  Text,
+  // useColorMode,
   CSSReset,
   ThemeProvider,
-  // Text,
   Heading,
+  Image,
+  Stack,
+  ButtonGroup,
+  Button,
+  Link,
 } from "@chakra-ui/core"
+// import scrollTo from "gatsby-plugin-smoothscroll"
 
+import Layout from "../components/layout"
+
+import SamHeadshot from "../assets/images/sam-headshot-fade.png"
+import RyanHeadshot from "../assets/images/ryan-headshot-fade.png"
 import customTheme from "../theme/theme"
 
-// import SEO from "../components/seo";
-
 const Index = () => {
-  const { colorMode } = useColorMode()
+  // const { colorMode } = useColorMode()
   return (
     <ThemeProvider theme={customTheme}>
       <CSSReset />
       <Layout>
-        {/* <SEO
-      title="Home"
-      description="I love solving problems, learning new things, and helping people. By day, I'm VP of Development at The Digital Ring, a full-service digital marketing agency in Madison, Wisconsin 🧀."
-      image=""
-    /> */}
         <Box
           as="section"
-          h="90vh"
+          minHeight="90vh"
           d="flex"
           flexDirection="column"
-          justifyContent="center"
-          alignItems="center"
+          className="intro"
         >
-          <Heading as="span">The right Pearson for the Job</Heading>
-          <Heading as="h1">
-            San Diego Website and Digital Marketing Company
+          <Stack
+            pt="32"
+            w="100%"
+            justify="space-between"
+            align="baseline"
+            isInline
+          >
+            <Image
+              w="200px"
+              h="auto"
+              objectFit="cover"
+              alt="Ryan Pearson"
+              src={RyanHeadshot}
+            />
+            <Image
+              w="170px"
+              h="auto"
+              objectFit="cover"
+              alt="Sam Pearson"
+              src={SamHeadshot}
+            />
+          </Stack>
+          <Text pt="4" color="brand.600" as="span">
+            The right Pearson for the Job
+          </Text>
+          <Heading py="4" as="h1">
+            San Diego Web Development and Digital Marketing Company
           </Heading>
-          <Heading as="span">
-            Pearsonable websites and digital marketing services
-          </Heading>
+          <Text pb="4" color="brand.600" as="span">
+            Pearsonable websites and online services
+          </Text>
+          <ButtonGroup>
+            <Link href="/projects" _hover={{ textDecoration: "none" }}>
+              <Button>View Projects</Button>
+            </Link>
+            <Link href="/contact" _hover={{ textDecoration: "none" }}>
+              <Button>Contact Us</Button>
+            </Link>
+          </ButtonGroup>
+        </Box>
+        <Box my="10" as="section" className="projects">
+          <Heading>Projects</Heading>
+          <Text>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla
+            velit cumque debitis voluptatum, perferendis quidem quaerat nostrum
+            aut deleniti alias dolore ipsum nemo aliquid tempora veritatis odio
+            in cum sunt natus! Odit nesciunt nostrum magnam pariatur tempora
+            laboriosam vel ipsum.
+          </Text>
+        </Box>
+        <Box my="10" as="section" className="services">
+          <Heading>Services</Heading>
+          <Text>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla
+            velit cumque debitis voluptatum, perferendis quidem quaerat nostrum
+            aut deleniti alias dolore ipsum nemo aliquid tempora veritatis odio
+            in cum sunt natus! Odit nesciunt nostrum magnam pariatur tempora
+            laboriosam vel ipsum.
+          </Text>
+        </Box>
+        <Box my="10" as="section" className="vision">
+          <Heading>Vision</Heading>
+          <Text>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla
+            velit cumque debitis voluptatum, perferendis quidem quaerat nostrum
+            aut deleniti alias dolore ipsum nemo aliquid tempora veritatis odio
+            in cum sunt natus! Odit nesciunt nostrum magnam pariatur tempora
+            laboriosam vel ipsum.
+          </Text>
+        </Box>
+        <Box my="10" as="section" className="contact">
+          <Heading>Contact</Heading>
+          <Text>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla
+            velit cumque debitis voluptatum, perferendis quidem quaerat nostrum
+            aut deleniti alias dolore ipsum nemo aliquid tempora veritatis odio
+            in cum sunt natus! Odit nesciunt nostrum magnam pariatur tempora
+            laboriosam vel ipsum.
+          </Text>
         </Box>
       </Layout>
     </ThemeProvider>

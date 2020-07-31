@@ -3,17 +3,12 @@ import { theme } from "@chakra-ui/core"
 
 const customIcons = {
   logo: {
+    className: "testing",
     path: (
       <g fill="currentColor">
-        <rect
-          x="0"
-          y="0"
-          width="272"
-          height="472"
-          transform="matrix(1,0,0,1,0,0)"
-        />
+        <rect className="logo-rect" x="0" y="0" width="272" height="472" />
         <circle
-          vectorEffect="non-scaling-stroke"
+          className="logo-circle"
           cx="272"
           cy="200.0000000000001"
           r="200.0000000000001"
