@@ -5,10 +5,13 @@ import { FiFacebook, FiInstagram, FiTwitter } from "react-icons/fi"
 const Social = () => {
   return (
     <ButtonGroup
+      className="social-icons"
+      as="aside"
       position="fixed"
+      width="fit-content"
       left="3"
       bottom="6"
-      d="flex"
+      d={["none", "none", "none", "flex"]}
       flexDirection="column"
       spacing="2"
       zIndex="100"

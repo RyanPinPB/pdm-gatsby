@@ -9,7 +9,8 @@ import {
   Icon,
   useColorMode,
 } from "@chakra-ui/core"
-import pbhomes from "../assets/images/pbhomes.png"
+
+import pbhomes from "../assets/images/projects/pbhomes.png"
 
 const Card = () => {
   const { colorMode } = useColorMode()

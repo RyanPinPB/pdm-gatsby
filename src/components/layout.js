@@ -1,59 +1,48 @@
 import React, { Fragment, useEffect } from "react"
 import { Box } from "@chakra-ui/core"
-// import Scrollbar from "smooth-scrollbar"
+import Scrollbar from "smooth-scrollbar"
 
 import Social from "./social"
 import Header from "./header"
-
-import "../assets/style.css"
 import Footer from "./footer"
+import "../assets/style.css"
 
 const Layout = ({ children }) => {
-  // Triggers for smooth scrolling
-
-  // useEffect(() => {
-  //   Scrollbar.init(document.querySelector("#smooth-scroll"), {
-  //     damping: 0.1,
-  //     renderByPixels: true,
-  //   })
-
-  //   document
-  //     .body
-  //     .addEventListener("scroll", handleScroll)
-
-  //   document
-  //     .querySelector(".scroll-content")
-  //     .addEventListener("change", () => console.log("scrolling"))
-  //   return () => {
-  //     document
-  //       .querySelector(".scroll-content")
-  //       .removeEventListener("change", console.log("scrolling"))
-  //   }
-  // }, [])
-
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll)
-
+    // allow svg logo to transform outside of it's contianer
     document.querySelector("svg").style.overflow = "visible"
+
+    // activate custom smooth scroll
+    const customScroll = Scrollbar.init(
+      document.querySelector("#smooth-scroll"),
+      {
+        damping: 0.1,
+        renderByPixels: true,
+      }
+    )
+
+    // function to trigger logo change at scroll y offet of 60
+    const handleScroll = () => {
+      let scrollPosition = customScroll.offset.y
+      if (scrollPosition > 60) {
+        document.querySelector(".site-header").classList.add("active")
+      } else {
+        document.querySelector(".site-header").classList.remove("active")
+      }
+    }
+
+    //add event listener to custom scroll
+    customScroll.addListener(handleScroll)
+
     return () => {
-      window.removeEventListener("scroll", handleScroll)
+      customScroll.removeListener(handleScroll)
     }
   }, [])
-
-  const handleScroll = () => {
-    let scrollPosition = window.scrollY
-    if (scrollPosition > 60) {
-      console.log("add active")
-      document.querySelector(".site-header").classList.add("active")
-    } else {
-      console.log("remove active")
-      document.querySelector(".site-header").classList.remove("active")
-    }
-  }
 
   return (
     <Fragment>
       <Header />
+      <Social />
       <div
         id="smooth-scroll"
         style={{
@@ -62,14 +51,17 @@ const Layout = ({ children }) => {
           position: "relative",
         }}
       >
-        <Box as="main" mx="16" mb={100}>
+        <Box
+          as="main"
+          className="page-content"
+          px={["4", "4", "12", "20"]}
+          mb={100}
+          maxW="1525px"
+        >
           {children}
         </Box>
         <Footer />
       </div>
-      <Box as="aside">
-        <Social />
-      </Box>
     </Fragment>
   )
 }

@@ -55,23 +55,24 @@
 }
 
 .active .logo-rect {
-  transform: rotate(90deg) matrix(0.1, 0, 0, 4, 500, -2000);
+  transform: rotate(90deg) matrix(0.1, 0, 0, 4, 400, -2000);
   transition: transform 0.3s ease-in-out 0s, width 0.3s ease-in-out 0s;
 }
 
 .active .logo-circle {
-  transform: rotate(0deg) matrix(0.5, 0, 0, 0.5, 1394, 234);
+  transform: rotate(0deg) matrix(0.5, 0, 0, 0.5, 1394, 105);
   transition: transform 0.3s ease-in-out 0s, width 0.3s ease-in-out 0s;
 }
 
 .logo-container {
-  /* display: flex;
-  width: fit-content; */
+  position: relative;
+  display: flex;
+  width: fit-content;
   height: 24px;
   line-height: 1;
 }
 
-.logo-container::after {
+.logo-text {
   display: flex;
   width: fit-content;
   font-size: 1.2rem;
@@ -79,15 +80,15 @@
   height: 24px;
   line-height: 1;
   content: "PEARSON";
-  transform: translate3d(8%, -100px, 0);
+  transform: matrix(0, 0, 0, 0, 8, 10);
   opacity: 0;
-  transition: transform 0.3s ease-in-out 0.3s, opacity 0.3s ease-in-out 0.3s;
+  transition: transform 0.3s ease-in-out 0s, opacity 0.3s ease-in-out 0s;
 }
 
-.active .logo-container::after {
-  transform: translate3d(8%, -17px, 0);
+.active .logo-text {
+  transform: matrix(1, 0, 0, 1, 8, 0);
   opacity: 1;
-  transition: transform 0s ease-in-out 0.2s, opacity 0.3s ease-in-out 0s;
+  transition: transform 0s ease-in-out 0.3s, opacity 0.3s ease-in-out 0.3s;
 }
 
 .site-header {
@@ -99,4 +100,27 @@
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1) !important;
+}
+
+.footer-nav-list {
+  column-count: 2;
+  column-gap: 5rem;
+}
+
+@media (min-width: 480px) {
+  .project-container figure::before {
+    padding-bottom: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .project-container figure::before {
+    padding-bottom: 87%;
+  }
+}
+
+@media (min-width: 992px) {
+  .project-container figure::before {
+    padding-bottom: 75%;
+  }
 }
