@@ -55,8 +55,9 @@ const Layout = ({ children }) => {
           as="main"
           className="page-content"
           px={["4", "4", "12", "20"]}
+          mx={{ xl: "auto" }}
           mb={100}
-          maxW="1525px"
+          maxW={{ xl: "1525px" }}
         >
           {children}
         </Box>

@@ -13,8 +13,10 @@ import {
   Link,
   Flex,
   AspectRatioBox,
+  Icon,
 } from "@chakra-ui/core"
 // import scrollTo from "gatsby-plugin-smoothscroll"
+import { motion } from "framer-motion"
 
 import Layout from "../components/layout"
 
@@ -25,6 +27,10 @@ import Travel from "../assets/images/projects/travel-imac-laptop-light.png"
 import SamHeadshot from "../assets/images/sam-headshot-fade.png"
 import RyanHeadshot from "../assets/images/ryan-headshot-fade.png"
 import customTheme from "../theme/theme"
+
+const MotionButton = motion.custom(Button)
+const ArrowLink = motion.custom(Link)
+const WiggleArrowIcon = motion.custom(Icon)
 
 const Index = () => {
   // const { colorMode } = useColorMode()
@@ -46,13 +52,16 @@ const Index = () => {
           top="5"
           left="5"
           fontSize="2xl"
+          fontWeight="900"
         >
           {title}
         </Heading>
         <AspectRatioBox as="figure" maxW="100%" ratio={0.75}>
           <Image src={imgSrc} alt={imgAlt} objectFit="cover" />
         </AspectRatioBox>
-        <Button
+        <MotionButton
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
           bg="rgba(26, 32, 44, .8)"
           color="white"
           zIndex="2"
@@ -60,9 +69,12 @@ const Index = () => {
           bottom="5"
           left="5"
           size="lg"
+          transition=" backgroundColor .250s ease-in-out, transform 0s linear"
+          _hover={{ bg: "rgba(26, 32, 44, 1)" }}
+          _active={{ bg: "rgba(26, 32, 44, 1)" }}
         >
-          VIEW
-        </Button>
+          View
+        </MotionButton>
       </Link>
     )
   }
@@ -75,17 +87,18 @@ const Index = () => {
         <Flex
           as="section"
           className="intro"
-          pt={["20", "20", "32"]}
+          pt={["20", "20", "32", "32", "40"]}
+          pb={{ xl: "20" }}
           w="100%"
           maxWidth="1525px"
           mx="auto"
           justify="center"
-          align="flex-end"
+          align={{ base: "flex-end", xl: "center" }}
           wrap="wrap"
         >
           <Stack
             className="intro-image-container-one"
-            w="100%"
+            w={{ base: "100%", xl: "20%" }}
             justify="space-evenly"
             align="flex-end"
             isInline
@@ -106,7 +119,7 @@ const Index = () => {
               />
             </Flex>
             <Flex
-              d={["flex", "flex", "flex", "none"]}
+              d={{ xl: "none" }}
               className="sam-pearson"
               as="figure"
               flex="1 1 13%"
@@ -122,7 +135,13 @@ const Index = () => {
               />
             </Flex>
           </Stack>
-          <Stack className="intro-content-container" minW="320px">
+          <Stack
+            className="intro-content-container"
+            w={{ base: "100%", xl: "60%" }}
+            maxW="700px"
+            mx="auto"
+            align={{ xl: "center" }}
+          >
             <Text pt="8" color="brand.600" as="span">
               The right Pearson for the job
             </Text>
@@ -131,6 +150,7 @@ const Index = () => {
               py="4"
               as="h1"
               lineHeight={["1.1", "1.1", "1.2"]}
+              textAlign={{ xl: "center" }}
             >
               San Diego Web Development and Digital Marketing
             </Heading>
@@ -147,7 +167,7 @@ const Index = () => {
                 href="/contact"
                 _hover={{ textDecoration: "none" }}
               >
-                <Button d={["none", "none", "inline-flex"]} size="lg">
+                <Button d={{ base: "none", xl: "inline-flex" }} size="lg">
                   Contact Us
                 </Button>
               </Link>
@@ -156,9 +176,9 @@ const Index = () => {
           <Flex
             className="sam-pearson-pic"
             as="figure"
-            flex="1 1 17%"
             maxW="400px"
-            d={["none", "none", "none", "flex"]}
+            d={{ base: "none", xl: "flex" }}
+            w={{ base: "0%", xl: "17%" }}
           >
             <Image
               w="100%"
@@ -175,7 +195,7 @@ const Index = () => {
             <Heading size="2xl">Projects</Heading>
             <Link href="/projects" _hover={{ textDecoration: "none" }}>
               <Button rightIcon="arrow-forward" size="lg">
-                view all
+                View all
               </Button>
             </Link>
           </Flex>
@@ -260,20 +280,27 @@ const Index = () => {
             <Text as="span" color="brand.600">
               NEED SOMETHING?
             </Text>
-            <Link
+            <ArrowLink
+              initial="rest"
+              whileHover="hover"
+              animate="rest"
               href="/contact"
-              // _hover={{ textDecoration: "none" }}
+              fontSize={["1.8rem", "2.4rem", "3rem"]}
+              lineHeight="1"
+              textAlign="center"
+              fontWeight="bold"
             >
-              <Button
-                fontSize={["1.8rem", "2.4rem", "3rem"]}
-                lineHeight="1"
-                bg="transparent"
-                size="xl"
-                rightIcon="arrow-forward"
-              >
-                Let's work together
-              </Button>
-            </Link>
+              Let's work together
+              <WiggleArrowIcon
+                animate={{ x: "50%" }}
+                transition={{
+                  yoyo: Infinity,
+                  ease: "easeInOut",
+                  duration: 0.6,
+                }}
+                name="arrow-forward"
+              />
+            </ArrowLink>
           </Flex>
         </Box>
       </Layout>

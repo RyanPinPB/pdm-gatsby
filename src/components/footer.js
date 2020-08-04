@@ -20,6 +20,8 @@ const Footer = () => {
         id="footer"
         my={["16", "16", "24"]}
         px={["4", "4", "12", "20"]}
+        maxW={{ xl: "1525px" }}
+        mx={{ xl: "auto" }}
         as="footer"
       >
         <Box as="nav" className="footer-nav" mb={["16", "16", "0"]}>

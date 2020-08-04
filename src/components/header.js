@@ -16,8 +16,7 @@ const Header = (props) => {
       alignItems="center"
       justifyContent="center"
       w="100%"
-      py="4"
-      px={["4", "4", "12", "20"]}
+      py={["4", "4", "12", "8"]}
       top="0"
       as="header"
       borderBottom="black"
@@ -30,7 +29,8 @@ const Header = (props) => {
         alignItems="center"
         justifyContent="space-between"
         w="100%"
-        maxW="1650px"
+        px={["4", "4", "12", "8"]}
+        maxW={{ xl: "1530px" }}
       >
         <Link className="logo-container" to="/">
           <Icon

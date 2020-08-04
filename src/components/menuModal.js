@@ -13,7 +13,7 @@ import {
   Stack,
 } from "@chakra-ui/core"
 
-const MenuContainer = (props) => {
+const MenuModal = (props) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <Fragment>
@@ -46,4 +46,4 @@ const MenuContainer = (props) => {
   )
 }
 
-export default MenuContainer
+export default MenuModal
