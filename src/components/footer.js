@@ -2,13 +2,15 @@ import React, { Fragment } from "react"
 import {
   Flex,
   Stack,
-  Link,
   Text,
   Divider,
   List,
   ListItem,
   Box,
+  Link as ChakraLink,
 } from "@chakra-ui/core"
+
+import { Link } from "gatsby"
 
 const Footer = () => {
   return (
@@ -25,26 +27,28 @@ const Footer = () => {
         as="footer"
       >
         <Box as="nav" className="footer-nav" mb={["16", "16", "0"]}>
-          <List className="footer-nav-list" styleType="none">
+          <List pr="4" className="footer-nav-list" styleType="none">
             <ListItem>
-              <Link href="/projects">Projects</Link>
+              <Link to="/projects">Projects</Link>
             </ListItem>
             <ListItem>
-              <Link href="/services">Services</Link>
+              <Link to="/services">Services</Link>
             </ListItem>
             <ListItem>
-              <Link href="/vision">Vision</Link>
+              <Link to="/vision">Vision</Link>
             </ListItem>
             <ListItem>
-              <Link href="/contact">Contact</Link>
+              <Link to="/contact">Contact</Link>
             </ListItem>
           </List>
         </Box>
         <Stack>
           <Text fontWeight="bold">Pearson Digital Marketing</Text>
           <Text>Pacific Beach, San Diego CA</Text>
-          <Link href="mailto:ryanpinpb@gmail.com">RyanPinPB@gmail.com</Link>
-          <Link href="tel:8587408495">(858) 740-8495</Link>
+          <ChakraLink href="mailto:ryanpinpb@gmail.com">
+            RyanPinPB@gmail.com
+          </ChakraLink>
+          <ChakraLink href="tel:8587408495">(858) 740-8495</ChakraLink>
         </Stack>
       </Flex>
     </Fragment>

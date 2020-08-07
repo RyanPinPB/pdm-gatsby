@@ -10,15 +10,15 @@ import {
   Stack,
   ButtonGroup,
   Button,
-  Link,
   Flex,
-  AspectRatioBox,
   Icon,
 } from "@chakra-ui/core"
-// import scrollTo from "gatsby-plugin-smoothscroll"
+
 import { motion } from "framer-motion"
 
+import { SiteLink as Link } from "../components/Link"
 import Layout from "../components/layout"
+import Project from "../components/project"
 
 import Pbhomes from "../assets/images/projects/pbh-desktop-phone-desk.jpg"
 import Bishop from "../assets/images/projects/bishop-iMac-blue.png"
@@ -28,57 +28,10 @@ import SamHeadshot from "../assets/images/sam-headshot-fade.png"
 import RyanHeadshot from "../assets/images/ryan-headshot-fade.png"
 import customTheme from "../theme/theme"
 
-const MotionButton = motion.custom(Button)
 const ArrowLink = motion.custom(Link)
 const WiggleArrowIcon = motion.custom(Icon)
 
 const Index = () => {
-  // const { colorMode } = useColorMode()
-
-  function Project({ title, projLink, desc, imgSrc, imgAlt, ...rest }) {
-    return (
-      <Link
-        className={`project-container`}
-        href={projLink}
-        position="relative"
-        shadow="md"
-        {...rest}
-      >
-        <Heading
-          as="h3"
-          zIndex="2"
-          color="brand.900"
-          position="absolute"
-          top="5"
-          left="5"
-          fontSize="2xl"
-          fontWeight="900"
-        >
-          {title}
-        </Heading>
-        <AspectRatioBox as="figure" maxW="100%" ratio={0.75}>
-          <Image src={imgSrc} alt={imgAlt} objectFit="cover" />
-        </AspectRatioBox>
-        <MotionButton
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          bg="rgba(26, 32, 44, .8)"
-          color="white"
-          zIndex="2"
-          position="absolute"
-          bottom="5"
-          left="5"
-          size="lg"
-          transition=" backgroundColor .250s ease-in-out, transform 0s linear"
-          _hover={{ bg: "rgba(26, 32, 44, 1)" }}
-          _active={{ bg: "rgba(26, 32, 44, 1)" }}
-        >
-          View
-        </MotionButton>
-      </Link>
-    )
-  }
-
   return (
     <ThemeProvider theme={customTheme}>
       <CSSReset />
@@ -167,7 +120,7 @@ const Index = () => {
                 href="/contact"
                 _hover={{ textDecoration: "none" }}
               >
-                <Button d={{ base: "none", xl: "inline-flex" }} size="lg">
+                <Button d={{ base: "none", md: "inline-flex" }} size="lg">
                   Contact Us
                 </Button>
               </Link>
@@ -269,10 +222,10 @@ const Index = () => {
           </Stack>
         </Box>
         {/* Contact section  */}
-        <Box my={["16", "16", "24"]} as="section" className="contact">
+        <Box mt={["16", "16", "24"]} as="section" className="contact">
           <Heading size="2xl">Contact Us</Heading>
           <Flex
-            mt={["16", "16", "24"]}
+            my={["16", "16", "24"]}
             direction="column"
             justify="center"
             align="center"
@@ -288,7 +241,6 @@ const Index = () => {
               fontSize={["1.8rem", "2.4rem", "3rem"]}
               lineHeight="1"
               textAlign="center"
-              fontWeight="bold"
             >
               Let's work together
               <WiggleArrowIcon

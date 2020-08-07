@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from "react"
+import React, { Fragment, useEffect, useState } from "react"
 import { Box } from "@chakra-ui/core"
 import Scrollbar from "smooth-scrollbar"
 
@@ -8,6 +8,8 @@ import Footer from "./footer"
 import "../assets/style.css"
 
 const Layout = ({ children }) => {
+  const [headerActive, setHeaderActive] = useState(false)
+
   useEffect(() => {
     // allow svg logo to transform outside of it's contianer
     document.querySelector("svg").style.overflow = "visible"
@@ -26,8 +28,10 @@ const Layout = ({ children }) => {
       let scrollPosition = customScroll.offset.y
       if (scrollPosition > 60) {
         document.querySelector(".site-header").classList.add("active")
+        setHeaderActive(true)
       } else {
         document.querySelector(".site-header").classList.remove("active")
+        setHeaderActive(false)
       }
     }
 
@@ -41,7 +45,7 @@ const Layout = ({ children }) => {
 
   return (
     <Fragment>
-      <Header />
+      <Header transformedHeader={headerActive} />
       <Social />
       <div
         id="smooth-scroll"
@@ -56,7 +60,6 @@ const Layout = ({ children }) => {
           className="page-content"
           px={["4", "4", "12", "20"]}
           mx={{ xl: "auto" }}
-          mb={100}
           maxW={{ xl: "1525px" }}
         >
           {children}

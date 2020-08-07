@@ -7,12 +7,7 @@ const customIcons = {
     path: (
       <g fill="currentColor">
         <rect className="logo-rect" x="0" y="0" width="272" height="472" />
-        <circle
-          className="logo-circle"
-          cx="272"
-          cy="200.0000000000001"
-          r="200.0000000000001"
-        />
+        <circle className="logo-circle" cx="272" cy="200" r="200" />
       </g>
     ),
     viewBox: "0 0 472 472",
@@ -21,6 +16,7 @@ const customIcons = {
 
 const customTheme = {
   ...theme,
+  // breakpoints: ["30em", "48em", "62em", "80em", "1525px"],
   colors: {
     ...theme.colors,
     brand: {
