@@ -56,13 +56,7 @@ const MenuMotion = (props) => {
 
   return (
     <motion.nav
-      // className="motion-menu-nav"
-      position="absolute"
-      width="100vw"
-      height="100vh"
-      d="flex"
-      justifyContent="center"
-      alignItems="center"
+      className="motion-menu-nav"
       initial={false}
       animate={props.menuOpen ? "open" : "closed"}
       custom={height}

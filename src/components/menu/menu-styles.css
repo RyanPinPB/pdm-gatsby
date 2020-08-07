@@ -1,15 +1,22 @@
 .motion-menu-nav {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 23px;
-  height: 23px;
-  margin-right: 1.5rem;
+  width: 0;
+  height: 100vh;
+  transition: width 0.5s ease-in-out 0.5s;
+}
+
+.motion-menu-nav.active {
+  width: 100vw;
+  transition: width 0s ease-in-out 0s;
 }
 
 .menu-background {
-  position: fixed;
+  position: absolute;
   top: 0px;
   left: 0px;
   width: 100%;

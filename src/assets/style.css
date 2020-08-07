@@ -53,6 +53,10 @@
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
+.site-header.active.menu-open {
+  -webkit-backdrop-filter: unset;
+  backdrop-filter: unset;
+}
 
 .logo-rect,
 .logo-circle {

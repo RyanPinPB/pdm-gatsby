@@ -24,21 +24,31 @@ const MenuToggle = ({ menuOpen, toggle }) => {
   //   />
   // )
 
+  const menuClickHandler = () => {
+    if (menuOpen) {
+      document.querySelector(".motion-menu-nav").classList.remove("active")
+      document.querySelector(".site-header").classList.remove("menu-open")
+    } else {
+      document.querySelector(".site-header").classList.add("menu-open")
+      document.querySelector(".motion-menu-nav").classList.add("active")
+    }
+
+    toggle()
+  }
+
   return (
     <Button
       bg="transparent"
       cursor="pointer"
       mt="0px"
       color={buttonColor}
-      // width="25px"
-      minWidth="25px"
       height="25px"
       pl="1"
       pr="1"
       mr="4"
       lineHeight="1"
       zIndex="10"
-      onClick={toggle}
+      onClick={menuClickHandler}
     >
       MENU
       {/* <svg width="23" height="23" viewBox="0 0 23 23">

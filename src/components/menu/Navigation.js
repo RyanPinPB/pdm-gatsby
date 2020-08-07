@@ -26,36 +26,25 @@ const NavList = motion.custom(List)
 
 const Navigation = () => {
   return (
-    <NavList
-      w="100vw"
-      height="100vh"
-      position="fixed"
-      flexDirection="column"
-      top="50%"
-      left="50%"
-      transform="translate3d(-50%,-50%,0)"
-      variants={variants}
-    >
-      {/* {pages.map((page, i) => ( */}
-      {/* <MenuItem i={i} key={i}> */}
-      {/* <MenuItem> */}
-      {/* {page} */}
-      {/* Testing */}
-      {/* </MenuItem> */}
-      {/* ))} */}
+    <NavList position="relative" flexDirection="column" variants={variants}>
+      {pages.map((page, index) => (
+        <MenuItem i={index} key={index}>
+          {page}
+        </MenuItem>
+      ))}
 
-      {itemIds.map((i) => (
+      {/* {itemIds.map((i) => (
         <MenuItem i={i} key={i}>
           Testing
         </MenuItem>
-      ))}
+      ))} */}
     </NavList>
   )
 }
 
-const itemIds = [0, 1, 2, 3, 4]
+// const itemIds = [0, 1, 2, 3, 4]
 
-// const pages = ["home", "projects", "services", "vision", "contact"]
+const pages = ["home", "projects", "services", "vision", "contact"]
 
 // const pages = [
 //   { name: "Home", path: "/" },
