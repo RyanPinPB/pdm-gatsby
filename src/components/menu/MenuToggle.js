@@ -36,6 +36,8 @@ const MenuToggle = ({ menuOpen, toggle }) => {
     toggle()
   }
 
+  const menuText = menuOpen ? "CLOSE" : "MENU"
+
   return (
     <Button
       bg="transparent"
@@ -50,7 +52,7 @@ const MenuToggle = ({ menuOpen, toggle }) => {
       zIndex="10"
       onClick={menuClickHandler}
     >
-      MENU
+      {menuText}
       {/* <svg width="23" height="23" viewBox="0 0 23 23">
         <Path
           variants={{

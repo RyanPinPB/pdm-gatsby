@@ -6,8 +6,10 @@ import {
   useColorMode,
   Text,
   Flex,
-  Link,
+  // Link as ChakraLink,
 } from "@chakra-ui/core"
+
+import { SiteLink as Link } from "./Link"
 
 import MenuMotion from "./menu/MenuMotion"
 import MenuToggle from "./menu/MenuToggle"
@@ -63,7 +65,7 @@ const Header = (props) => {
           width="fit-content"
           height="24px"
           line-height="1"
-          to="/"
+          href="/"
         >
           <Icon
             w="6"

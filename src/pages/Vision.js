@@ -1,14 +1,14 @@
 import React from "react"
 
 import Layout from "../components/layout"
-import Card from "../components/card"
+import { Text } from "@chakra-ui/core"
 
-const Projects = () => {
+const Vision = () => {
   return (
     <Layout>
-      <Card />
+      <Text>Vision</Text>
     </Layout>
   )
 }
 
-export default Projects
+export default Vision

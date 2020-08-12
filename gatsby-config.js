@@ -60,6 +60,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-netlify-cache`,
+    `gatsby-plugin-sass`,
     `gatsby-plugin-smoothscroll`,
     {
       resolve: `gatsby-plugin-manifest`,

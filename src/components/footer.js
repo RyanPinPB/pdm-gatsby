@@ -10,6 +10,7 @@ import {
   Link as ChakraLink,
 } from "@chakra-ui/core"
 
+// import { SiteLink } from "./Link"
 import { Link } from "gatsby"
 
 const Footer = () => {

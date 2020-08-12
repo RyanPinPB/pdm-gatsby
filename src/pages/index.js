@@ -1,10 +1,8 @@
-import React from "react"
+import React, { useEffect, useRef } from "react"
 import {
   Box,
   Text,
-  // useColorMode,
-  CSSReset,
-  ThemeProvider,
+  useColorMode,
   Heading,
   Image,
   Stack,
@@ -15,179 +13,211 @@ import {
 } from "@chakra-ui/core"
 
 import { motion } from "framer-motion"
-
+import "../assets/home.scss"
 import { SiteLink as Link } from "../components/Link"
 import Layout from "../components/layout"
 import Project from "../components/project"
+import useWindowDimensions from "../utils/window-dimensions"
 
+//images for intro section and project section
 import Pbhomes from "../assets/images/projects/pbh-desktop-phone-desk.jpg"
 import Bishop from "../assets/images/projects/bishop-iMac-blue.png"
 import Ravenous from "../assets/images/projects/ravenous-macbook-desk.png"
 import Travel from "../assets/images/projects/travel-imac-laptop-light.png"
 import SamHeadshot from "../assets/images/sam-headshot-fade.png"
 import RyanHeadshot from "../assets/images/ryan-headshot-fade.png"
-import customTheme from "../theme/theme"
 
 const ArrowLink = motion.custom(Link)
 const WiggleArrowIcon = motion.custom(Icon)
+const ServicesBox = motion.custom(Box)
 
 const Index = () => {
+  const { colorMode } = useColorMode()
+  const constraintsRef = useRef(null)
+  const { width } = useWindowDimensions()
+  // setting up monster's eye movement in Vision section
+  useEffect(() => {
+    if (width >= 993) {
+      let mouseContainer = document.querySelector("#smooth-scroll")
+      const eyeFollow = (e) => {
+        let eyes = document.querySelector(".eyes")
+        let mouseX = eyes.getBoundingClientRect().left
+        let mouseY = eyes.getBoundingClientRect().top
+        let radianDegrees = Math.atan2(e.pageX - mouseX, e.pageY - mouseY)
+        let rotationDegrees = radianDegrees * (180 / Math.PI) * -1 + 180
+        eyes.style.transform = `rotate(${rotationDegrees}deg)`
+      }
+
+      mouseContainer.addEventListener("mousemove", eyeFollow)
+      return () => {
+        mouseContainer.removeEventListener("mousemove", eyeFollow)
+      }
+    }
+  }, [width])
+
   return (
-    <ThemeProvider theme={customTheme}>
-      <CSSReset />
-      <Layout>
-        {/* Intro hero/banner section  */}
-        <Flex
-          as="section"
-          className="intro"
-          pt={["20", "20", "32", "32", "40"]}
-          pb={{ xl: "20" }}
-          w="100%"
-          maxWidth="1525px"
-          mx="auto"
-          justify="center"
-          align={{ base: "flex-end", xl: "center" }}
-          wrap="wrap"
+    <Layout>
+      {/* Intro hero/banner section  */}
+      <Flex
+        as="section"
+        className="intro"
+        pb={["12", "16", "20"]}
+        w="100%"
+        maxWidth="1525px"
+        mx="auto"
+        justify="center"
+        align={{ base: "flex-end", xl: "center" }}
+        wrap="wrap"
+      >
+        <Stack
+          className="intro-image-container-one"
+          w={{ base: "100%", xl: "20%" }}
+          justify="space-evenly"
+          align="flex-end"
+          isInline
         >
-          <Stack
-            className="intro-image-container-one"
-            w={{ base: "100%", xl: "20%" }}
-            justify="space-evenly"
-            align="flex-end"
-            isInline
-          >
-            <Flex
-              className="ryan-pearson"
-              align="baseline"
-              as="figure"
-              maxW="265px"
-              flex="1 1 20%"
-            >
-              <Image
-                width="100%"
-                height="auto"
-                objectFit="cover"
-                alt="Ryan Pearson"
-                src={RyanHeadshot}
-              />
-            </Flex>
-            <Flex
-              d={{ xl: "none" }}
-              className="sam-pearson"
-              as="figure"
-              flex="1 1 13%"
-              maxW="225px"
-            >
-              <Image
-                w="100%"
-                maxW="225px"
-                h="auto"
-                objectFit="cover"
-                alt="Sam Pearson"
-                src={SamHeadshot}
-              />
-            </Flex>
-          </Stack>
-          <Stack
-            className="intro-content-container"
-            w={{ base: "100%", xl: "60%" }}
-            maxW="700px"
-            mx="auto"
-            align={{ xl: "center" }}
-          >
-            <Text pt="8" color="brand.600" as="span">
-              The right Pearson for the job
-            </Text>
-            <Heading
-              size="2xl"
-              py="4"
-              as="h1"
-              lineHeight={["1.1", "1.1", "1.2"]}
-              textAlign={{ xl: "center" }}
-            >
-              San Diego Web Development and Digital Marketing
-            </Heading>
-            <Text pb="4" color="brand.600" as="span">
-              Pearsonable websites, content, seo, ppc and social media
-              management
-            </Text>
-            <ButtonGroup spacing="8" pt="4">
-              <Link href="/projects" _hover={{ textDecoration: "none" }}>
-                <Button size="lg">View Projects</Button>
-              </Link>
-              <Link
-                className="contact-button"
-                href="/contact"
-                _hover={{ textDecoration: "none" }}
-              >
-                <Button d={{ base: "none", md: "inline-flex" }} size="lg">
-                  Contact Us
-                </Button>
-              </Link>
-            </ButtonGroup>
-          </Stack>
           <Flex
-            className="sam-pearson-pic"
+            className="ryan-pearson"
+            align="baseline"
             as="figure"
-            maxW="400px"
-            d={{ base: "none", xl: "flex" }}
-            w={{ base: "0%", xl: "17%" }}
+            maxW="265px"
+            flex="1 1 20%"
+          >
+            <Image
+              width="100%"
+              height="auto"
+              objectFit="cover"
+              alt="Ryan Pearson"
+              src={RyanHeadshot}
+            />
+          </Flex>
+          <Flex
+            d={{ xl: "none" }}
+            className="sam-pearson"
+            as="figure"
+            flex="1 1 13%"
+            maxW="225px"
           >
             <Image
               w="100%"
+              maxW="225px"
               h="auto"
               objectFit="cover"
               alt="Sam Pearson"
               src={SamHeadshot}
             />
           </Flex>
-        </Flex>
-        {/* Project section  */}
-        <Box my={["16", "16", "24"]} as="section" className="projects">
-          <Flex as="header" justify="space-between" align="center">
-            <Heading size="2xl">Projects</Heading>
+        </Stack>
+        <Stack
+          className="intro-content-container"
+          w={{ base: "100%", xl: "60%" }}
+          // maxW="700px"
+          mx="auto"
+          // align={{ xl: "center" }}
+          align="center"
+        >
+          <Text pt="8" color="brand.600" as="span" textAlign="center">
+            {/* The right Pearson for the job. */}
+            Your customers deserve an amazing online experience.
+          </Text>
+          <Heading
+            size="2xl"
+            fontSize={["32px", "50px", "76px", "80px"]}
+            py="4"
+            as="h1"
+            lineHeight={["1.1", "1.1", "1.2", "1"]}
+            // textAlign={{ xl: "center" }}
+            textAlign="center"
+            id="banner-text"
+          >
+            Digital Marketing &<br />
+            Web Development
+          </Heading>
+          <Text pb="4" color="brand.600" as="span" textAlign="center">
+            websites, content, seo, ppc and social media management
+          </Text>
+          <ButtonGroup spacing="8" py="4">
             <Link href="/projects" _hover={{ textDecoration: "none" }}>
-              <Button rightIcon="arrow-forward" size="lg">
-                View all
+              <Button size="lg">View Projects</Button>
+            </Link>
+            <Link
+              className="contact-button"
+              href="/contact"
+              _hover={{ textDecoration: "none" }}
+            >
+              <Button d={{ base: "none", md: "inline-flex" }} size="lg">
+                Contact Us
               </Button>
             </Link>
-          </Flex>
-          <Stack mt={12} spacing={12}>
-            <Project
-              title="Pacific Beach Homes"
-              projLink="/"
-              desc="The future can be even brighter but a goal without a plan is just a wish"
-              imgSrc={Pbhomes}
-              imgAlt="Pacific Beach Homes Real Estate"
-            />
-            <Project
-              title="R.H. Bishop Books"
-              projLink="/"
-              desc="You deserve good things. With a whooping 10-15% interest rate per annum, grow your savings on your own terms with our completely automated process"
-              imgSrc={Bishop}
-              imgAlt="R.H. Bishop Books"
-            />
-            <Project
-              title="Ravenous"
-              projLink="/"
-              desc="You deserve good things. With a whooping 10-15% interest rate per annum, grow your savings on your own terms with our completely automated process"
-              imgSrc={Ravenous}
-              imgAlt="Ravenous"
-            />
-            <Project
-              title="Travel"
-              projLink="/"
-              desc="You deserve good things. With a whooping 10-15% interest rate per annum, grow your savings on your own terms with our completely automated process"
-              imgSrc={Travel}
-              imgAlt="Travel"
-            />
-          </Stack>
-        </Box>
-        {/* Services section  */}
-        <Box my={["16", "16", "24"]} as="section" className="services">
-          <Heading size="2xl">Services</Heading>
+          </ButtonGroup>
+        </Stack>
+        <Flex
+          className="sam-pearson-pic"
+          as="figure"
+          maxW="400px"
+          d={{ base: "none", xl: "flex" }}
+          w={{ base: "0%", xl: "17%" }}
+        >
+          <Image
+            w="100%"
+            h="auto"
+            objectFit="cover"
+            alt="Sam Pearson"
+            src={SamHeadshot}
+          />
+        </Flex>
+      </Flex>
+      {/* Project section  */}
+      <Box py={["12", "16", "20"]} as="section" className="projects">
+        <Flex as="header" justify="space-between" align="center">
+          <Heading size="2xl">Projects</Heading>
+          <Link href="/projects" _hover={{ textDecoration: "none" }}>
+            <Button rightIcon="arrow-forward" size="lg">
+              View all
+            </Button>
+          </Link>
+        </Flex>
+        <Stack mt={12} spacing={12}>
+          <Project
+            title="Pacific Beach Homes"
+            projLink="/"
+            desc="The future can be even brighter but a goal without a plan is just a wish"
+            imgSrc={Pbhomes}
+            imgAlt="Pacific Beach Homes Real Estate"
+          />
+          <Project
+            title="R.H. Bishop Books"
+            projLink="/"
+            desc="You deserve good things. With a whooping 10-15% interest rate per annum, grow your savings on your own terms with our completely automated process"
+            imgSrc={Bishop}
+            imgAlt="R.H. Bishop Books"
+          />
+          <Project
+            title="Ravenous"
+            projLink="/"
+            desc="You deserve good things. With a whooping 10-15% interest rate per annum, grow your savings on your own terms with our completely automated process"
+            imgSrc={Ravenous}
+            imgAlt="Ravenous"
+          />
+          <Project
+            title="Travel"
+            projLink="/"
+            desc="You deserve good things. With a whooping 10-15% interest rate per annum, grow your savings on your own terms with our completely automated process"
+            imgSrc={Travel}
+            imgAlt="Travel"
+          />
+        </Stack>
+      </Box>
+      {/* Services section  */}
+      <Box py={["12", "16", "20"]} as="section" className="services">
+        <Heading size="2xl">Services</Heading>
+        <Flex wrap="wrap">
           <Stack mt={[0, 0, "16"]} ml={[0, 0, "32"]}>
-            <Text pt={["8", "8", "0"]} pb={["4", "4", "8"]}>
+            <Text
+              pt={["8", "8", "0"]}
+              pb={["4", "4", "8"]}
+              maxWidth={{ base: "100%", lg: "600px" }}
+            >
               We provide custom website development for any type of business.
               This includes a free consultation and feedback on your current
               digital footprint. After you have a beautiful and fast website, we
@@ -201,12 +231,54 @@ const Index = () => {
               </Button>
             </Link>
           </Stack>
-        </Box>
-        {/* Vision section */}
-        <Box my={["16", "16", "24"]} as="section" className="vision">
-          <Heading size="2xl">Vision</Heading>
+          <Box
+            d={{ base: "none", lg: "flex" }}
+            flexGrow="1"
+            flexShrink="1"
+            justifyContent="center"
+            alignItems="center"
+            position="relative"
+            ref={constraintsRef}
+          >
+            <ServicesBox
+              bg={colorMode === "light" ? "black" : "white"}
+              cursor="grab"
+              borderRadius="30px"
+              width="150px"
+              height="150px"
+              drag
+              dragConstraints={constraintsRef}
+              animate={{
+                scale: [1, 2, 2, 1, 1],
+                rotate: [0, 0, 270, 270, 0],
+                borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+              }}
+              transition={{
+                duration: 2,
+                ease: "easeInOut",
+                times: [0, 0.2, 0.5, 0.8, 1],
+                loop: Infinity,
+                repeatDelay: 1,
+              }}
+            />
+          </Box>
+        </Flex>
+      </Box>
+      {/* Vision section */}
+      <Box
+        py={["12", "16", "20"]}
+        as="section"
+        position="relative"
+        className="vision"
+      >
+        <Heading size="2xl">Vision</Heading>
+        <Flex wrap="wrap">
           <Stack mt={[0, 0, "16"]} ml={[0, 0, "32"]}>
-            <Text pt={["8", "8", "0"]} pb={["4", "4", "8"]}>
+            <Text
+              pt={["8", "8", "0"]}
+              pb={["4", "4", "8"]}
+              maxWidth={{ base: "100%", lg: "600px" }}
+            >
               We believe your brand should have Beyoncé-like quality in it's
               presence on the internet. If someone finds your business on a
               screen, they should remember it. When they remember your brand and
@@ -220,43 +292,66 @@ const Index = () => {
               </Button>
             </Link>
           </Stack>
-        </Box>
-        {/* Contact section  */}
-        <Box mt={["16", "16", "24"]} as="section" className="contact">
-          <Heading size="2xl">Contact Us</Heading>
-          <Flex
-            my={["16", "16", "24"]}
-            direction="column"
-            justify="center"
-            align="center"
+          <Box
+            d={{ base: "none", lg: "flex" }}
+            flexGrow="1"
+            flexShrink="1"
+            justifyContent="center"
+            alignItems="center"
+            fontSize="10vmin"
+            position="relative"
+            className="ufo"
           >
-            <Text as="span" color="brand.600">
-              NEED SOMETHING?
-            </Text>
-            <ArrowLink
-              initial="rest"
-              whileHover="hover"
-              animate="rest"
-              href="/contact"
-              fontSize={["1.8rem", "2.4rem", "3rem"]}
-              lineHeight="1"
-              textAlign="center"
-            >
-              Let's work together
-              <WiggleArrowIcon
-                animate={{ x: "50%" }}
-                transition={{
-                  yoyo: Infinity,
-                  ease: "easeInOut",
-                  duration: 0.6,
-                }}
-                name="arrow-forward"
-              />
-            </ArrowLink>
-          </Flex>
-        </Box>
-      </Layout>
-    </ThemeProvider>
+            <div className="monster">
+              <div className="body">
+                <div className="ear"></div>
+                <div className="ear"></div>
+                <div className="vampi-mouth">
+                  <div className="vampi-tooth"></div>
+                </div>
+              </div>
+              <div className="eye-lid">
+                <div className="eyes">
+                  <div className="eye"></div>
+                </div>
+              </div>
+            </div>
+          </Box>
+        </Flex>
+      </Box>
+      {/* Contact section  */}
+      <Box py={["12", "16", "20"]} as="section" className="contact">
+        <Heading size="2xl">Contact Us</Heading>
+        <Flex
+          mt={["16", "16", "24"]}
+          mb={["8", "12", "20"]}
+          direction="column"
+          justify="center"
+          align="center"
+        >
+          <Text as="span" color="brand.600">
+            NEED SOMETHING?
+          </Text>
+          <ArrowLink
+            href="/contact"
+            fontSize={["1.8rem", "2.4rem", "3rem"]}
+            lineHeight="1"
+            textAlign="center"
+          >
+            Let's work together
+            <WiggleArrowIcon
+              animate={{ x: "50%" }}
+              transition={{
+                yoyo: Infinity,
+                ease: "easeInOut",
+                duration: 0.6,
+              }}
+              name="arrow-forward"
+            />
+          </ArrowLink>
+        </Flex>
+      </Box>
+    </Layout>
   )
 }
 
