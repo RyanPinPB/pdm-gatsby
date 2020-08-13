@@ -29,6 +29,29 @@
   }
 }
 
-#banner-text {
-  @include fluid-type($min-font-size: 32px, $max-font-size: 160px);
+.contact-form {
+  width: 100%;
+  max-width: 350px;
+  padding: 20px 0;
+}
+
+.contact-form label {
+  position: relative;
+  z-index: 2;
+  transform: translate3D(15px, 42.5px, 0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.contact-form textarea:focus + label,
+.contact-form input:focus + label {
+  transform: translate3D(15px, 0px, 0);
+}
+.contact-form textarea:valid + label,
+.contact-form input:valid + label {
+  transform: translate3D(15px, 0px, 0);
+}
+
+#contact-us {
+  -webkit-text-stroke: 4px rgba(0, 0, 0, 1);
+  @include fluid-type($min-font-size: 46px, $max-font-size: 280px);
 }

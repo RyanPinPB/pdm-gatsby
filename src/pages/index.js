@@ -111,29 +111,40 @@ const Index = () => {
         <Stack
           className="intro-content-container"
           w={{ base: "100%", xl: "60%" }}
-          // maxW="700px"
           mx="auto"
-          // align={{ xl: "center" }}
           align="center"
         >
-          <Text pt="8" color="brand.600" as="span" textAlign="center">
+          <Text
+            fontSize="2xl"
+            lineHeight="1.1"
+            pt="8"
+            color="brand.600"
+            as="span"
+            textAlign="center"
+          >
             {/* The right Pearson for the job. */}
             Your customers deserve an amazing online experience.
           </Text>
           <Heading
             size="2xl"
-            fontSize={["32px", "50px", "76px", "80px"]}
             py="4"
             as="h1"
             lineHeight={["1.1", "1.1", "1.2", "1"]}
-            // textAlign={{ xl: "center" }}
             textAlign="center"
             id="banner-text"
           >
             Digital Marketing &<br />
             Web Development
           </Heading>
-          <Text pb="4" color="brand.600" as="span" textAlign="center">
+          <Text
+            fontSize="2xl"
+            lineHeight="1.1"
+            pb="4"
+            color="brand.600"
+            as="span"
+            textAlign="center"
+            mt=".5rem"
+          >
             websites, content, seo, ppc and social media management
           </Text>
           <ButtonGroup spacing="8" py="4">

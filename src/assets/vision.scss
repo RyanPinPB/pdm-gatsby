@@ -29,6 +29,7 @@
   }
 }
 
-#banner-text {
-  @include fluid-type($min-font-size: 32px, $max-font-size: 160px);
+#vision-watermark {
+  -webkit-text-stroke: 4px rgba(0, 0, 0, 1);
+  @include fluid-type($min-font-size: 80px, $max-font-size: 560px);
 }

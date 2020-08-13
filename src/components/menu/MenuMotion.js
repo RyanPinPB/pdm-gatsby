@@ -14,7 +14,7 @@ const MenuMotion = (props) => {
 
   // adjusting menu background color by color mode
   const sidebarColor =
-    colorMode === "dark" ? "rgba(255,255,255,.8)" : "rgba(26, 32, 44, .8)"
+    colorMode === "dark" ? "rgba(255,255,255,.9)" : "rgba(26, 32, 44, .9)"
 
   // define animation for the background
   const sidebar = {

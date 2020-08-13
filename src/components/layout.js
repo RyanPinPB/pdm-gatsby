@@ -79,6 +79,7 @@ const Layout = ({ children }) => {
       >
         <ContentContainer
           as="main"
+          position="relative"
           className="page-content"
           // pt={["20", "20", "32", "32", "40"]}
           pt="20"
