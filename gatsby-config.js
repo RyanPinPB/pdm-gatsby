@@ -29,7 +29,7 @@ module.exports = {
       options: {
         url:
           process.env.WPGRAPHQL_URL ||
-          `http://pearsondigitalmarketing.local/graphql`,
+          `https://wp.pearsondigitalmarketing.com/graphql`,
         verbose: true,
         develop: {
           hardCacheMediaFiles: true,
