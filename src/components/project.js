@@ -9,6 +9,7 @@ const Project = ({ title, projLink, desc, imgSrc, imgAlt, ...rest }) => {
     <Link
       className={`project-container`}
       href={projLink}
+      isExternal
       position="relative"
       shadow="md"
       {...rest}

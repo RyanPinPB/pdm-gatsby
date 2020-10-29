@@ -17,8 +17,9 @@ const Social = () => {
       spacing="2"
       zIndex="100"
     >
-      <Link href="facebook.com" isExternal>
+      <Link href="https://facebook.com" isExternal>
         <Button
+          className="social-button"
           bg="transparent"
           variant="solid"
           size="md"
@@ -28,8 +29,9 @@ const Social = () => {
           fill={colorMode === "light" ? "black" : "white"}
         />
       </Link>
-      <Link href="instagram.com" isExternal>
+      <Link href="https://instagram.com" isExternal>
         <Button
+          // className="social-button"
           bg="transparent"
           size="md"
           p="2"
@@ -40,8 +42,9 @@ const Social = () => {
           stroke={colorMode === "light" ? "white" : "black"}
         />
       </Link>
-      <Link href="twitter.com" isExternal>
+      <Link href="https://twitter.com" isExternal>
         <Button
+          className="social-button"
           bg="transparent"
           size="md"
           p="2"

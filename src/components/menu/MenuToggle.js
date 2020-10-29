@@ -24,7 +24,23 @@ const MenuToggle = ({ menuOpen, toggle }) => {
   //   />
   // )
 
+  const changeSocialFillColor = () => {
+    console.log(document.querySelectorAll(".social-button"))
+
+    const social_buttons = document.querySelectorAll(".social-button")
+    social_buttons.forEach((button) => {
+      colorMode === "dark"
+        ? menuOpen
+          ? (button.style.stroke = "black")
+          : (button.style.stroke = "white")
+        : !menuOpen
+        ? (button.style.stroke = "white")
+        : (button.style.stroke = "black")
+    })
+  }
+
   const menuClickHandler = () => {
+    changeSocialFillColor()
     if (menuOpen) {
       document.querySelector(".motion-menu-nav").classList.remove("active")
       document.querySelector(".site-header").classList.remove("menu-open")

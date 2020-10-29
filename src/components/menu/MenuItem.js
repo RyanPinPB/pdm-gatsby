@@ -25,7 +25,7 @@ const LinkMotion = motion.custom(Link)
 
 const colors = ["#FF008C", "#D309E1", "#9C1AFF", "#7700FF", "#4400FF"]
 
-export const MenuItem = ({ i, children }) => {
+export const MenuItem = ({ i, children, url }) => {
   const { colorMode } = useColorMode()
   const style = { border: `2px solid ${colors[i]}` }
   return (
@@ -38,7 +38,7 @@ export const MenuItem = ({ i, children }) => {
       <div className="icon-placeholder" style={style} />
       <LinkMotion
         // href={`${url[i]}`}
-        // href="/"
+        href={url}
         color={colorMode === "light" ? "white" : "black"}
         width="fit-content"
         fontSize={["3rem", "4rem", "5rem", "6rem"]}

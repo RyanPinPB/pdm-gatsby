@@ -18,6 +18,7 @@ import { SiteLink as Link } from "../components/Link"
 import Layout from "../components/layout"
 import Project from "../components/project"
 import useWindowDimensions from "../utils/window-dimensions"
+import SEO from "../components/seo"
 
 //images for intro section and project section
 import Pbhomes from "../assets/images/projects/pbh-desktop-phone-desk.jpg"
@@ -26,6 +27,7 @@ import Ravenous from "../assets/images/projects/ravenous-macbook-desk.png"
 import Travel from "../assets/images/projects/travel-imac-laptop-light.png"
 import SamHeadshot from "../assets/images/sam-headshot-fade.png"
 import RyanHeadshot from "../assets/images/ryan-headshot-fade.png"
+import FeaturedImage from "../assets/images/pearson-digital-marketing.png"
 
 const ArrowLink = motion.custom(Link)
 const WiggleArrowIcon = motion.custom(Icon)
@@ -57,6 +59,12 @@ const Index = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Web Development and Marketing | Pearson Digital Marketing"
+        description="Need a new website? Need leads? Free consultation for learning about what options are available"
+        // image="/assets/images/pearson-digital-marketing.png"
+        image={FeaturedImage}
+      />
       {/* Intro hero/banner section  */}
       <Flex
         as="section"
@@ -191,28 +199,28 @@ const Index = () => {
         <Stack mt={12} spacing={12}>
           <Project
             title="Pacific Beach Homes"
-            projLink="/"
+            projLink="https://pacificbeachhomes.com"
             desc="The future can be even brighter but a goal without a plan is just a wish"
             imgSrc={Pbhomes}
             imgAlt="Pacific Beach Homes Real Estate"
           />
           <Project
             title="R.H. Bishop Books"
-            projLink="/"
+            projLink="https://www.rhbishopbooks.com/"
             desc="You deserve good things. With a whooping 10-15% interest rate per annum, grow your savings on your own terms with our completely automated process"
             imgSrc={Bishop}
             imgAlt="R.H. Bishop Books"
           />
           <Project
             title="Ravenous"
-            projLink="/"
+            projLink="https://jolly-gates-109dc9.netlify.app/"
             desc="You deserve good things. With a whooping 10-15% interest rate per annum, grow your savings on your own terms with our completely automated process"
             imgSrc={Ravenous}
             imgAlt="Ravenous"
           />
           <Project
             title="Travel"
-            projLink="/"
+            projLink="https://travel.ryanpearson.website/"
             desc="You deserve good things. With a whooping 10-15% interest rate per annum, grow your savings on your own terms with our completely automated process"
             imgSrc={Travel}
             imgAlt="Travel"
@@ -253,12 +261,12 @@ const Index = () => {
           >
             <ServicesBox
               bg={colorMode === "light" ? "black" : "white"}
-              cursor="grab"
+              // cursor="grab"
               borderRadius="30px"
               width="150px"
               height="150px"
-              drag
-              dragConstraints={constraintsRef}
+              // drag
+              // dragConstraints={constraintsRef}
               animate={{
                 scale: [1, 2, 2, 1, 1],
                 rotate: [0, 0, 270, 270, 0],

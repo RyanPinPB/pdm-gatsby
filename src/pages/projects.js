@@ -9,11 +9,18 @@ import Ravenous from "../assets/images/projects/ravenous-macbook-desk.png"
 import Travel from "../assets/images/projects/travel-imac-laptop-light.png"
 import { Stack, Heading, useColorMode } from "@chakra-ui/core"
 import "../assets/projects.scss"
+import SEO from "../components/seo"
 
 const Projects = () => {
   const { colorMode } = useColorMode()
   return (
     <Layout>
+      <SEO
+        title="Projects | Pearson Digital Marketing"
+        description="Projects developed by Pearson Digital Marketing"
+        // image="/assets/images/pearson-digital-marketing.png"
+        // image={FeaturedImage}
+      />
       <Heading
         as="h1"
         id="projects-watermark"

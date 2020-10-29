@@ -31,4 +31,5 @@
 
 #banner-text {
   @include fluid-type($min-font-size: 32px, $max-font-size: 160px);
+  // font-size: clamp(2.3rem, 13vw, 28rem);
 }

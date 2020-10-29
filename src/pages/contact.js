@@ -4,6 +4,7 @@ import { useColorMode, Heading, Flex } from "@chakra-ui/core"
 import Layout from "../components/layout"
 import FormikForm from "../components/FormikForm"
 import "../assets/contact.scss"
+import SEO from "../components/seo"
 
 const Contact = () => {
   const { colorMode } = useColorMode()
@@ -12,6 +13,11 @@ const Contact = () => {
   }
   return (
     <Layout>
+      <SEO
+        title="Contact | Pearson Digital Marketing"
+        description="Contact Pearson Digital Marketing for web development or digital marketing services"
+        // image={FeaturedImage}
+      />
       <Heading
         as="h1"
         id="contact-us"

@@ -12,6 +12,8 @@ module.exports = {
     title: `Pearson Digital Marketing`,
     description: `Web development and digital marketing services in San Diego, CA.`,
     author: `@ryanpinpb`,
+    year: 2020,
+    image: "src/assets/images/pearson-digital-marketing.png",
   },
   plugins: [
     `gatsby-plugin-sharp`,
@@ -62,6 +64,7 @@ module.exports = {
     `gatsby-plugin-netlify-cache`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-smoothscroll`,
+    "gatsby-plugin-react-helmet",
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

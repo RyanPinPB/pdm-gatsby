@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 
 import customTheme from "../theme/theme"
 
+// import SEO from "./seo"
 import Social from "./social"
 import Header from "./header"
 import Footer from "./footer"
@@ -64,6 +65,7 @@ const Layout = ({ children }) => {
 
   return (
     <ThemeProvider theme={customTheme}>
+      {/* <SEO title={title} description={description} image={image} /> */}
       <CSSReset />
       {/* <Loader /> */}
       <Header transformedHeader={headerActive} />

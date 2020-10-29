@@ -2,6 +2,8 @@ import * as React from "react"
 import { motion } from "framer-motion"
 import { MenuItem } from "./MenuItem"
 import { List } from "@chakra-ui/core"
+import { useStaticQuery, graphql } from "gatsby"
+import { normalizePath } from "../../utils/get-url-path"
 
 const variants = {
   open: {
@@ -25,35 +27,44 @@ const variants = {
 const NavList = motion.custom(List)
 
 const Navigation = () => {
+  const { wpMenu } = useStaticQuery(graphql`
+    {
+      wpMenu(slug: { eq: "primary-menu" }) {
+        name
+        menuItems {
+          nodes {
+            label
+            url
+            parentId
+            connectedNode {
+              node {
+                ... on WpContentNode {
+                  uri
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
   return (
     <NavList position="relative" flexDirection="column" variants={variants}>
-      {pages.map((page, index) => (
-        <MenuItem i={index} key={index}>
-          {page}
-        </MenuItem>
-      ))}
+      {wpMenu.menuItems.nodes.map((page, index) => {
+        if (page.parentId) {
+          return null
+        }
 
-      {/* {itemIds.map((i) => (
-        <MenuItem i={i} key={i}>
-          Testing
-        </MenuItem>
-      ))} */}
+        const path = page?.connectedNode?.node?.uri ?? page.url
+        return (
+          <MenuItem i={index} key={index} url={normalizePath(path)}>
+            {page.label}
+          </MenuItem>
+        )
+      })}
     </NavList>
   )
 }
-
-// const itemIds = [0, 1, 2, 3, 4]
-
-const pages = ["home", "projects", "services", "vision", "contact"]
-
-// const pages = [
-//   { name: "Home", path: "/" },
-//   { name: "Projects", path: "/projects" },
-//   { name: "Services", path: "/services" },
-//   { name: "Vision", path: "/vision" },
-//   { name: "Contact", path: "/contact" },
-// ]
-
-// const paths = ["/", "/projects", "/services", "/vision", "/contact"]
 
 export default Navigation
