@@ -110,7 +110,6 @@ const Index = () => {
               w="100%"
               maxW="225px"
               h="auto"
-              maxH="300px"
               objectFit="cover"
               alt="Sam Pearson"
               src={SamHeadshot}
@@ -175,6 +174,7 @@ const Index = () => {
           className="sam-pearson-pic"
           as="figure"
           maxW="400px"
+          maxH="300px"
           d={{ base: "none", xl: "flex" }}
           w={{ base: "0%", xl: "17%" }}
         >

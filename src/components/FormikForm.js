@@ -42,11 +42,14 @@ const FormikForm = () => {
         <form
           data-netlify="true"
           data-netlify-honeypot="bot-field"
-          netlify
+          // netlify
           name="contact-form"
+          method="POST"
+          action="/"
           className="contact-form"
           onSubmit={props.handleSubmit}
         >
+          <input type="hidden" name="form-name" value="contact-form" />
           <Field name="name">
             {({ field, form }) => (
               <FormControl
@@ -66,7 +69,9 @@ const FormikForm = () => {
                   }}
                   size="lg"
                   {...field}
+                  name="name"
                   id="name"
+                  type="text"
                 />
                 <FormLabel htmlFor="name" fontSize="1.125rem">
                   Name{" "}
@@ -95,6 +100,8 @@ const FormikForm = () => {
                   size="lg"
                   {...field}
                   id="email"
+                  name="email"
+                  type="email"
                 />
                 <FormLabel fontSize="1.125rem" htmlFor="email">
                   Email
@@ -122,6 +129,8 @@ const FormikForm = () => {
                   size="lg"
                   {...field}
                   id="phone"
+                  name="phone"
+                  type="tel"
                 />
                 <FormLabel fontSize="1.125rem" htmlFor="phone">
                   Phone
@@ -152,6 +161,7 @@ const FormikForm = () => {
                   resize="none"
                   {...field}
                   id="message"
+                  name="message"
                 />
                 <FormLabel fontSize="1.125rem" htmlFor="message">
                   Short message
