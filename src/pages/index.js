@@ -110,6 +110,7 @@ const Index = () => {
               w="100%"
               maxW="225px"
               h="auto"
+              maxH="300px"
               objectFit="cover"
               alt="Sam Pearson"
               src={SamHeadshot}

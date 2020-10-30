@@ -32,13 +32,21 @@ const FormikForm = () => {
       })}
       onSubmit={(values, actions) => {
         setTimeout(() => {
-          alert(JSON.stringify(values, null, 2))
+          // alert(JSON.stringify(values, null, 2))
+          console.log(values)
           actions.setSubmitting(false)
         }, 1000)
       }}
     >
       {(props) => (
-        <form netlify className="contact-form" onSubmit={props.handleSubmit}>
+        <form
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          netlify
+          name="contact-form"
+          className="contact-form"
+          onSubmit={props.handleSubmit}
+        >
           <Field name="name">
             {({ field, form }) => (
               <FormControl
