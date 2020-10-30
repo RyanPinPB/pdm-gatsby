@@ -25,8 +25,6 @@ const MenuToggle = ({ menuOpen, toggle }) => {
   // )
 
   const changeSocialFillColor = () => {
-    console.log(document.querySelectorAll(".social-button"))
-
     const social_buttons = document.querySelectorAll(".social-button")
     social_buttons.forEach((button) => {
       colorMode === "dark"

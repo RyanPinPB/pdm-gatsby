@@ -38,7 +38,7 @@ const FormikForm = () => {
       }}
     >
       {(props) => (
-        <form className="contact-form" onSubmit={props.handleSubmit}>
+        <form netlify className="contact-form" onSubmit={props.handleSubmit}>
           <Field name="name">
             {({ field, form }) => (
               <FormControl
