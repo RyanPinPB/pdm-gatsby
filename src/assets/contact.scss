@@ -38,16 +38,25 @@
 .contact-form label {
   position: relative;
   z-index: 2;
+  opacity: 0;
   transform: translate3D(15px, 42.5px, 0);
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 .contact-form textarea:focus + label,
 .contact-form input:focus + label {
+  opacity: 1;
   transform: translate3D(15px, 0px, 0);
 }
-.contact-form textarea:valid + label,
-.contact-form input:valid + label {
+
+// .contact-form textarea:valid + label,
+// .contact-form input:valid + label {
+//   transform: translate3D(15px, 0px, 0);
+// }
+
+.contact-form textarea:not(:placeholder-shown) + label,
+.contact-form input:not(:placeholder-shown) + label {
+  opacity: 1;
   transform: translate3D(15px, 0px, 0);
 }
 

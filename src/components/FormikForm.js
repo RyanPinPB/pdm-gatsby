@@ -62,7 +62,7 @@ const FormikForm = () => {
       //   }, 1000)
       // }}
       onSubmit={(values, { setSubmitting }) => {
-        console.log("Form submitted to Netlify")
+        // console.log("Form submitted to Netlify")
         fetch("/?no-cache=1", {
           method: "POST",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -83,12 +83,11 @@ const FormikForm = () => {
     >
       {(props) => (
         <form
-          // netlify
           data-netlify="true"
           data-netlify-honeypot="bot-field"
           name="contact-form"
           method="POST"
-          action="/"
+          action="/thanks/"
           className="contact-form"
           // onSubmit={handleSubmit}
           // onReset={handleReset}
@@ -116,9 +115,10 @@ const FormikForm = () => {
                   name="name"
                   id="name"
                   type="text"
+                  placeholder="Name"
                 />
                 <FormLabel htmlFor="name" fontSize="1.125rem">
-                  Name{" "}
+                  Name
                 </FormLabel>
                 <FormErrorMessage>{form.errors.name}</FormErrorMessage>
               </FormControl>
@@ -146,6 +146,7 @@ const FormikForm = () => {
                   id="email"
                   name="email"
                   type="email"
+                  placeholder="Email"
                 />
                 <FormLabel fontSize="1.125rem" htmlFor="email">
                   Email
@@ -175,6 +176,7 @@ const FormikForm = () => {
                   id="phone"
                   name="phone"
                   type="tel"
+                  placeholder="Phone"
                 />
                 <FormLabel fontSize="1.125rem" htmlFor="phone">
                   Phone
@@ -206,6 +208,7 @@ const FormikForm = () => {
                   {...field}
                   id="message"
                   name="message"
+                  placeholder="Short message"
                 />
                 <FormLabel fontSize="1.125rem" htmlFor="message">
                   Short message
