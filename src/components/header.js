@@ -71,7 +71,7 @@ const Header = (props) => {
             w="6"
             h="6"
             name="logo"
-            color={colorMode === "light" ? "brand.100" : "brand.900"}
+            color={colorMode === "light" ? "rgba(26, 32, 44, 1)" : "brand.900"}
           />
           <Text
             as="span"
@@ -83,8 +83,9 @@ const Header = (props) => {
             fontWeight="700"
             height="24px"
             lineHeight="1"
-            content='"PEARSON"'
+            content="PEARSON"
             transform="matrix(0, 0, 0, 0, 8, 10)"
+            color={colorMode === "light" ? "rgba(26, 32, 44, 1)" : "brand.900"}
             opacity="0"
             transition="transform 0.3s ease-in-out 0s, opacity 0.3s ease-in-out 0s"
           >

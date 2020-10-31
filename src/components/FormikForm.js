@@ -14,13 +14,37 @@ import * as Yup from "yup"
 
 const FormikForm = () => {
   const { colorMode } = useColorMode()
+
+  const encode = (data) => {
+    return Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+      )
+      .join("&")
+  }
+
+  // const handleSubmit = (e) => {
+  //   console.log("form submitted")
+  //   // fetch("/", {
+  //   //   method: "POST",
+  //   //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
+  //   //   body: encode({ "form-name": "contact-form", values }),
+  //   //   // body: encode({ "form-name": "contact-form", ...this.state })
+  //   // })
+  //   //   .then(() => console.log("Form submitted successfully"))
+  //   //   .catch((error) => alert(error))
+
+  //   e.preventDefault()
+  // }
+
   const phoneRegExp = /^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)?$/
+
   return (
     <Formik
       initialValues={{ name: "", email: "", phone: "", message: "" }}
       validationSchema={Yup.object({
         name: Yup.string()
-          .max(15, "Must be 15 characters or less")
+          .max(25, "Must be 25 characters or less")
           .required("Required"),
         email: Yup.string().email("Invalid email address").required("Required"),
         phone: Yup.string()
@@ -30,24 +54,44 @@ const FormikForm = () => {
           .max(300, "Please use less than 300 characters")
           .required("Required"),
       })}
-      onSubmit={(values, actions) => {
-        setTimeout(() => {
-          // alert(JSON.stringify(values, null, 2))
-          console.log(values)
-          actions.setSubmitting(false)
-        }, 1000)
+      // onSubmit={(values, actions) => {
+      //   setTimeout(() => {
+      //     // alert(JSON.stringify(values, null, 2))
+      //     console.log(values)
+      //     actions.setSubmitting(false)
+      //   }, 1000)
+      // }}
+      onSubmit={(values, { setSubmitting }) => {
+        console.log("Form submitted to Netlify")
+        fetch("/?no-cache=1", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: encode({
+            "form-name": "contact",
+            ...values,
+          }),
+        })
+          .then(() => {
+            alert("Success!")
+            setSubmitting(false)
+          })
+          .catch((error) => {
+            alert("Error: Please Try Again!")
+            setSubmitting(false)
+          })
       }}
     >
       {(props) => (
         <form
+          // netlify
           data-netlify="true"
           data-netlify-honeypot="bot-field"
-          // netlify
           name="contact-form"
           method="POST"
           action="/"
           className="contact-form"
-          onSubmit={props.handleSubmit}
+          // onSubmit={handleSubmit}
+          // onReset={handleReset}
         >
           <input type="hidden" name="form-name" value="contact-form" />
           <Field name="name">

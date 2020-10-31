@@ -21,7 +21,7 @@ const Footer = () => {
         wrap="wrap"
         justify="space-between"
         id="footer"
-        my={["16", "16", "24"]}
+        py={["16", "16", "24"]}
         px={["4", "4", "12", "20"]}
         maxW={{ xl: "1525px" }}
         mx={{ xl: "auto" }}

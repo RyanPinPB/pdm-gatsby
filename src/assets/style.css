@@ -11,6 +11,7 @@
 
   /* main text  */
   --blackTwo: rgba(33, 33, 33, 1);
+  --blackFour: rgba(26, 32, 44, 1);
 
   --grey: rgba(112, 108, 97, 1);
   --greyTwo: rgba(117, 117, 117, 1);
@@ -69,7 +70,7 @@
 }
 
 .active .logo-circle {
-  transform: rotate(0deg) matrix(0.6, 0, 0, 0.68, 1215, 65);
+  transform: rotate(0deg) matrix(0.6, 0, 0, 0.68, 1215, 62);
   transition: transform 0.3s ease-in-out 0s, width 0.3s ease-in-out 0s;
 }
 

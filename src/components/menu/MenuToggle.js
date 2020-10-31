@@ -8,7 +8,7 @@ const MenuToggle = ({ menuOpen, toggle }) => {
   const buttonColor =
     colorMode === "dark"
       ? menuOpen
-        ? "rgba(0, 0, 0, 1)"
+        ? "rgba(26, 32, 44, 1)"
         : "rgba(255,255,255, 1)"
       : !menuOpen
       ? "rgba(26, 32, 44, 1)"

@@ -9,24 +9,6 @@ import SEO from "../components/seo"
 const Contact = () => {
   const { colorMode } = useColorMode()
 
-  // const encode = (data) => {
-  //   return Object.keys(data)
-  //       .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-  //       .join("&");
-  // }
-
-  const handleSubmit = (e) => {
-    console.log("form submitted")
-    // fetch("/", {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    //   body: encode({ "form-name": "contact-form", ...this.state })
-    // })
-    //   .then(() => console.log("Form submitted successfully"))
-    //   .catch(error => alert(error));
-
-    e.preventDefault()
-  }
   return (
     <Layout>
       <SEO
@@ -53,7 +35,7 @@ const Contact = () => {
         CONTACT US
       </Heading>
       <Flex pb="20" justify="center" align="center">
-        <FormikForm handleSubmit={handleSubmit} />
+        <FormikForm />
       </Flex>
     </Layout>
   )
