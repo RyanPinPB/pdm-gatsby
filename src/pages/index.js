@@ -102,15 +102,16 @@ const Index = () => {
           <Flex
             d={{ xl: "none" }}
             className="sam-pearson"
+            align="baseline"
             as="figure"
-            flex="1 1 13%"
             maxW="225px"
+            flex="1 1 13%"
           >
             <Image
               w="100%"
               maxW="225px"
               h="auto"
-              objectFit="cover"
+              objectFit="contain"
               alt="Sam Pearson"
               src={SamHeadshot}
             />
@@ -174,14 +175,13 @@ const Index = () => {
           className="sam-pearson-pic"
           as="figure"
           maxW="400px"
-          maxH="300px"
           d={{ base: "none", xl: "flex" }}
           w={{ base: "0%", xl: "17%" }}
         >
           <Image
             w="100%"
             h="auto"
-            objectFit="cover"
+            objectFit="contain"
             alt="Sam Pearson"
             src={SamHeadshot}
           />
