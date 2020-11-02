@@ -26,7 +26,7 @@ const variants = {
 
 const NavList = motion.custom(List)
 
-const Navigation = () => {
+const Navigation = (props) => {
   const { wpMenu } = useStaticQuery(graphql`
     {
       wpMenu(slug: { eq: "primary-menu" }) {
@@ -58,7 +58,12 @@ const Navigation = () => {
 
         const path = page?.connectedNode?.node?.uri ?? page.url
         return (
-          <MenuItem i={index} key={index} url={normalizePath(path)}>
+          <MenuItem
+            i={index}
+            key={index}
+            url={normalizePath(path)}
+            toggleMenu={props.toggleMenu}
+          >
             {page.label}
           </MenuItem>
         )

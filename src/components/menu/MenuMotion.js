@@ -63,7 +63,7 @@ const MenuMotion = (props) => {
       ref={containerRef}
     >
       <motion.div className="menu-background" variants={sidebar} />
-      <Navigation />
+      <Navigation toggleMenu={props.toggleMenu} />
     </motion.nav>
   )
 }

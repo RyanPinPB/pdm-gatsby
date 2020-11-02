@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import { Text, Heading, Stack, Flex, useColorMode } from "@chakra-ui/core"
 import "../assets/vision.scss"
 import SEO from "../components/seo"
+import FeaturedImage from "../assets/images/pearson-digital-marketing.png"
 
 const Vision = () => {
   const { colorMode } = useColorMode()
@@ -12,7 +13,7 @@ const Vision = () => {
       <SEO
         title="Vision | Pearson Digital Marketing"
         description="Pearson Digital Marketing's vision for helping business owners achieve an unforgettable digital presence."
-        // image={FeaturedImage}
+        image={FeaturedImage}
       />
       <Heading
         as="h1"

@@ -45,7 +45,11 @@ const Header = (props) => {
         colorMode === "light" ? "rgba(255,255,255,.6)" : "rgba(26, 32, 44, .6)"
       }
     >
-      <MenuMotion menuOpen={isOpen} headerActive={props.transformedHeader} />
+      <MenuMotion
+        menuOpen={isOpen}
+        toggleMenu={toggleOpen}
+        headerActive={props.transformedHeader}
+      />
       <Flex
         alignItems="center"
         justifyContent="space-between"

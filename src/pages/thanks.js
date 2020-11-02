@@ -3,6 +3,7 @@ import React from "react"
 import { Heading, Flex } from "@chakra-ui/core"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import FeaturedImage from "../assets/images/pearson-digital-marketing.png"
 
 const Thanks = () => {
   return (
@@ -10,7 +11,7 @@ const Thanks = () => {
       <SEO
         title="Thanks | Pearson Digital Marketing"
         description="Form submission received. Thank you for contacting Pearson Digital Marketing."
-        // image={FeaturedImage}
+        image={FeaturedImage}
       />
       <Heading
         as="h1"
