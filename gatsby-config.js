@@ -14,6 +14,7 @@ module.exports = {
     author: `@ryanpinpb`,
     year: 2020,
     image: "src/assets/images/pearson-digital-marketing.png",
+    siteUrl: `https://pearsondigitalmarketing.com`,
   },
   plugins: [
     `gatsby-plugin-sharp`,
