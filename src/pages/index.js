@@ -162,6 +162,7 @@ const Index = () => {
             </Link>
             <Link
               className="contact-button"
+              aria-label="Contact Us"
               href="/contact"
               _hover={{ textDecoration: "none" }}
             >
@@ -214,7 +215,7 @@ const Index = () => {
           />
           <Project
             title="Ravenous"
-            projLink="https://jolly-gates-109dc9.netlify.app/"
+            projLink="https://ravenoussearch.netlify.app/"
             desc="You deserve good things. With a whooping 10-15% interest rate per annum, grow your savings on your own terms with our completely automated process"
             imgSrc={Ravenous}
             imgAlt="Ravenous"

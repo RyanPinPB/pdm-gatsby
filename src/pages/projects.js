@@ -7,7 +7,7 @@ import Pbhomes from "../assets/images/projects/pbh-desktop-phone-desk.jpg"
 import Bishop from "../assets/images/projects/bishop-iMac-blue.png"
 import Ravenous from "../assets/images/projects/ravenous-macbook-desk.png"
 import Travel from "../assets/images/projects/travel-imac-laptop-light.png"
-// import Chiggy from "../assets/images/projects/chiggybank.png"
+import Chiggy from "../assets/images/projects/chiggybank.png"
 import { Stack, Heading, useColorMode } from "@chakra-ui/core"
 import "../assets/projects.scss"
 import SEO from "../components/seo"
@@ -57,7 +57,7 @@ const Projects = () => {
         />
         <Project
           title="Ravenous"
-          projLink="https://jolly-gates-109dc9.netlify.app/"
+          projLink="https://ravenoussearch.netlify.app/"
           desc="Find food and other businesses nearby, ranked by reviews"
           imgSrc={Ravenous}
           imgAlt="Ravenous"
@@ -69,13 +69,13 @@ const Projects = () => {
           imgSrc={Travel}
           imgAlt="Travel"
         />
-        {/* <Project
+        <Project
           title="Chiggy Bank"
           projLink="https://chiggybank.herokuapp.com/"
           desc="Chiggy Bank is a piggy bank for chickens. Test your theories on investing with fake money."
           imgSrc={Chiggy}
           imgAlt="Chiggy Bank"
-        /> */}
+        />
       </Stack>
     </Layout>
   )

@@ -26,6 +26,7 @@ const Social = () => {
           p="2"
           rounded="50%"
           as={FiFacebook}
+          aria-label="Pearson Digital Marketing Facebook"
           fill={colorMode === "light" ? "black" : "white"}
         />
       </Link>
@@ -37,6 +38,7 @@ const Social = () => {
           p="2"
           variant="solid"
           as={FiInstagram}
+          aria-label="Pearson Digital Marketing Instagram"
           rounded="50%"
           fill={colorMode === "light" ? "black" : "white"}
           stroke={colorMode === "light" ? "white" : "black"}
@@ -51,6 +53,7 @@ const Social = () => {
           variant="solid"
           fill={colorMode === "light" ? "black" : "white"}
           as={FiTwitter}
+          aria-label="Pearson Digital Marketing Twitter"
           rounded="50%"
         />
       </Link>

@@ -111,6 +111,7 @@ const Header = (props) => {
             h="25px"
             bg="transparent"
             onClick={toggleColorMode}
+            aria-label="Color mode toggle"
           >
             {colorMode === "light" ? (
               <Icon width="23px" height="23px" name="moon" />
