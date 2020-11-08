@@ -42,7 +42,11 @@ const Services = () => {
             wants to grow and become more efficient, we can help you.
           </Text>
         </Flex>
-        <Flex as="section" direction="column" alignItems="flex-end">
+        <Flex
+          as="section"
+          direction="column"
+          alignItems={["flex-start", "flex-start", "flex-end"]}
+        >
           <Heading>Web Development</Heading>
           <Text maxWidth="600px">
             Your website is one of the first things your customer's will look at
@@ -61,7 +65,11 @@ const Services = () => {
             people's time.
           </Text>
         </Flex>
-        <Flex as="section" direction="column" alignItems="flex-end">
+        <Flex
+          as="section"
+          direction="column"
+          alignItems={["flex-start", "flex-start", "flex-end"]}
+        >
           <Heading>SEO</Heading>
           <Text maxWidth="600px">
             Search engine optimization helps your customers find your content
@@ -81,7 +89,11 @@ const Services = () => {
             Twitter, Instagram and Amazon.
           </Text>
         </Flex>
-        <Flex as="section" direction="column" alignItems="flex-end">
+        <Flex
+          as="section"
+          direction="column"
+          alignItems={["flex-start", "flex-start", "flex-end"]}
+        >
           <Heading>Email Marketing</Heading>
           <Text maxWidth="600px">
             Once you have a database of clients and leads, email marketing is a

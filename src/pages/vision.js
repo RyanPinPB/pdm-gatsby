@@ -43,7 +43,11 @@ const Vision = () => {
             people with your product or service.
           </Text>
         </Flex>
-        <Flex as="section" direction="column" alignItems="flex-end">
+        <Flex
+          as="section"
+          direction="column"
+          alignItems={["flex-start", "flex-start", "flex-end"]}
+        >
           <Heading>Productive</Heading>
           <Text maxWidth="600px">
             Get results and a digital presence that you can be proud of. There
@@ -60,7 +64,11 @@ const Vision = () => {
             will be proud of what your customers interact with.
           </Text>
         </Flex>
-        <Flex as="section" direction="column" alignItems="flex-end">
+        <Flex
+          as="section"
+          direction="column"
+          alignItems={["flex-start", "flex-start", "flex-end"]}
+        >
           <Heading>Helpful</Heading>
           <Text maxWidth="600px">
             We want to help you help your customers. We respond promptly and
@@ -78,7 +86,11 @@ const Vision = () => {
             your website and we cant build it, we will tell you.
           </Text>
         </Flex>
-        <Flex as="section" direction="column" alignItems="flex-end">
+        <Flex
+          as="section"
+          direction="column"
+          alignItems={["flex-start", "flex-start", "flex-end"]}
+        >
           <Heading>Resilient</Heading>
           <Text maxWidth="600px">
             High quality websites and content can last for years. While the web

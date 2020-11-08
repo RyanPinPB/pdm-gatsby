@@ -61,7 +61,13 @@
 }
 
 #contact-us {
-  -webkit-text-stroke: 4px rgba(0, 0, 0, 1);
+  // -webkit-text-stroke: 4px rgba(0, 0, 0, 1);
   // @include fluid-type($min-font-size: 46px, $max-font-size: 280px);
   font-size: clamp(2.3rem, 13vw, 28rem);
+}
+
+@media (min-width: 768px) {
+  #contact-us {
+    -webkit-text-stroke: 4px rgba(0, 0, 0, 1);
+  }
 }

@@ -30,7 +30,13 @@
 // }
 
 #services-watermark {
-  -webkit-text-stroke: 4px rgba(0, 0, 0, 1);
+  // -webkit-text-stroke: 4px rgba(0, 0, 0, 1);
   // @include fluid-type($min-font-size: 70px, $max-font-size: 400px);
   font-size: clamp(2.3rem, 20vw, 28rem);
+}
+
+@media (min-width: 768px) {
+  #services-watermark {
+    -webkit-text-stroke: 4px rgba(0, 0, 0, 1);
+  }
 }
