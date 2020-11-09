@@ -25,6 +25,7 @@ import Pbhomes from "../assets/images/projects/pbh-desktop-phone-desk.jpg"
 import Bishop from "../assets/images/projects/bishop-iMac-blue.png"
 import Ravenous from "../assets/images/projects/ravenous-macbook-desk.png"
 import Travel from "../assets/images/projects/travel-imac-laptop-light.png"
+import Chiggy from "../assets/images/projects/chiggybank.jpg"
 import SamHeadshot from "../assets/images/sam-headshot-fade.png"
 import RyanHeadshot from "../assets/images/ryan-headshot-fade.png"
 import FeaturedImage from "../assets/images/pearson-digital-marketing.png"
@@ -226,6 +227,13 @@ const Index = () => {
             desc="You deserve good things. With a whooping 10-15% interest rate per annum, grow your savings on your own terms with our completely automated process"
             imgSrc={Travel}
             imgAlt="Travel"
+          />
+          <Project
+            title="Chiggy Bank"
+            projLink="https://chiggybank.herokuapp.com/"
+            desc="Chiggy Bank is a piggy bank for chickens. Test your theories on investing with fake money."
+            imgSrc={Chiggy}
+            imgAlt="Chiggy Bank"
           />
         </Stack>
       </Box>

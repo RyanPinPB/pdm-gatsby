@@ -63,6 +63,17 @@ const Layout = ({ children }) => {
     }
   }, [])
 
+  //fix the mobile 100vh issue for root div and mobile menu
+  if (typeof window !== `undefined`) {
+    let vh = window.innerHeight * 0.01
+    document.documentElement.style.setProperty("--vh", `${vh}px`)
+    // adjust 100vh on resize event
+    window.addEventListener("resize", () => {
+      let vh = window.innerHeight * 0.01
+      document.documentElement.style.setProperty("--vh", `${vh}px`)
+    })
+  }
+
   return (
     <ThemeProvider theme={customTheme}>
       {/* <SEO title={title} description={description} image={image} /> */}
@@ -71,11 +82,14 @@ const Layout = ({ children }) => {
       <Header transformedHeader={headerActive} />
       <Social />
       <ScrollContainer
+        className="vh100"
         initial="hidden"
         animate="visible"
         variants={pageVariants}
         id="smooth-scroll"
-        h="100vh"
+        // h="100vh"
+        h="calc(var(--vh, 1vh) * 100)"
+        // min-height= "calc(var(--vh, 1vh) * 100)"
         w="100vw"
         position="relative"
       >

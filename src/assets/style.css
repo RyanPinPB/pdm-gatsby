@@ -24,6 +24,11 @@
   --blueLight: rgba(225, 244, 243, 1);
 }
 
+.vh100 {
+  min-height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+  min-height: calc(var(--vh, 1vh) * 100);
+}
+
 .pagination {
   width: 100%;
   display: grid;
