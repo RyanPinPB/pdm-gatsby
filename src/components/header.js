@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 import {
   Box,
   Button,
@@ -19,12 +19,7 @@ const Header = (props) => {
   const { colorMode, toggleColorMode } = useColorMode()
   const [isOpen, toggleOpen] = useCycle(false, true)
 
-  useEffect(() => {
-    console.log("header.js useEffect: colorMode: " + colorMode)
-    // return () => {
-    //   cleanup
-    // }
-  }, [colorMode])
+  console.log("header.js: colorMode=" + colorMode)
 
   const bgColor = {
     light: "rgba(255,255,255,.6)",
