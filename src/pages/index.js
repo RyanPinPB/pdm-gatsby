@@ -59,6 +59,12 @@ const Index = () => {
     }
   }, [width])
 
+  const bgColor = {
+    light: "#EDF2F7",
+    dark: "rgba(255,255,255,0.08)",
+  }
+  const color = { light: "brand.400", dark: "brand.900" }
+
   return (
     <Layout>
       <SEO
@@ -160,7 +166,13 @@ const Index = () => {
           </Text>
           <ButtonGroup spacing="8" py="4">
             <Link href="/projects" _hover={{ textDecoration: "none" }}>
-              <Button size="lg">View Projects</Button>
+              <Button
+                bg={bgColor[colorMode]}
+                color={color[colorMode]}
+                size="lg"
+              >
+                View Projects
+              </Button>
             </Link>
             <Link
               className="contact-button"
@@ -168,7 +180,12 @@ const Index = () => {
               href="/contact"
               _hover={{ textDecoration: "none" }}
             >
-              <Button d={{ base: "none", md: "inline-flex" }} size="lg">
+              <Button
+                d={{ base: "none", md: "inline-flex" }}
+                size="lg"
+                bg={bgColor[colorMode]}
+                color={color[colorMode]}
+              >
                 Contact Us
               </Button>
             </Link>
@@ -195,7 +212,12 @@ const Index = () => {
         <Flex as="header" justify="space-between" align="center">
           <Heading size="2xl">Projects</Heading>
           <Link href="/projects" _hover={{ textDecoration: "none" }}>
-            <Button rightIcon="arrow-forward" size="lg">
+            <Button
+              rightIcon="arrow-forward"
+              size="lg"
+              bg={bgColor[colorMode]}
+              color={color[colorMode]}
+            >
               View all
             </Button>
           </Link>
@@ -256,7 +278,12 @@ const Index = () => {
               landing page configuration.
             </Text>
             <Link href="/services" _hover={{ textDecoration: "none" }}>
-              <Button size="lg" rightIcon="arrow-forward">
+              <Button
+                size="lg"
+                rightIcon="arrow-forward"
+                bg={bgColor[colorMode]}
+                color={color[colorMode]}
+              >
                 Our services
               </Button>
             </Link>
@@ -317,7 +344,12 @@ const Index = () => {
               brand with friends, providing residual marketing.
             </Text>
             <Link href="/vision" _hover={{ textDecoration: "none" }}>
-              <Button size="lg" rightIcon="arrow-forward">
+              <Button
+                size="lg"
+                rightIcon="arrow-forward"
+                bg={bgColor[colorMode]}
+                color={color[colorMode]}
+              >
                 Our vision
               </Button>
             </Link>

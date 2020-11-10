@@ -12,6 +12,7 @@ const ThemeContext = React.createContext(defaultState)
 // You need macOS Mojave + Safari Technology Preview Release 68 to test this currently.
 const supportsDarkMode = () =>
   window.matchMedia("(prefers-color-scheme: dark)").matches === true
+
 class ThemeProvider extends React.Component {
   state = {
     dark: false,
@@ -24,7 +25,7 @@ class ThemeProvider extends React.Component {
   }
   componentDidMount() {
     // Getting dark mode value from localStorage!
-    console.log(this.state.dark)
+    console.log("ThemeContext.js component did mount, dark: " + this.state.dark)
     const lsDark = JSON.parse(localStorage.getItem("dark"))
     if (lsDark) {
       console.log("ThemeContext.js: lsDark: " + lsDark)

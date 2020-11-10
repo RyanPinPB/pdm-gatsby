@@ -4,8 +4,6 @@ import Scrollbar from "smooth-scrollbar"
 import { motion } from "framer-motion"
 
 import customTheme from "../theme/theme"
-
-// import SEO from "./seo"
 import Social from "./social"
 import Header from "./header"
 import Footer from "./footer"
@@ -76,7 +74,6 @@ const Layout = ({ children }) => {
 
   return (
     <ThemeProvider theme={customTheme}>
-      {/* <SEO title={title} description={description} image={image} /> */}
       <CSSReset />
       {/* <Loader /> */}
       <Header transformedHeader={headerActive} />
@@ -87,9 +84,7 @@ const Layout = ({ children }) => {
         animate="visible"
         variants={pageVariants}
         id="smooth-scroll"
-        // h="100vh"
         h="calc(var(--vh, 1vh) * 100)"
-        // min-height= "calc(var(--vh, 1vh) * 100)"
         w="100vw"
         position="relative"
       >
@@ -97,7 +92,6 @@ const Layout = ({ children }) => {
           as="main"
           position="relative"
           className="page-content"
-          // pt={["20", "20", "32", "32", "40"]}
           pt="20"
           px={["4", "4", "12", "20"]}
           mx={{ xl: "auto" }}

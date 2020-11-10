@@ -26,6 +26,12 @@ const Header = (props) => {
     // }
   }, [colorMode])
 
+  const bgColor = {
+    light: "rgba(255,255,255,.6)",
+    dark: "rgba(26, 32, 44, .6)",
+  }
+  const color = { light: "brand.400", dark: "brand.900" }
+
   return (
     <Box
       className="site-header"
@@ -48,9 +54,10 @@ const Header = (props) => {
           : "0.1rem solid rgba(0, 0, 0, 0)"
       }
       zIndex="100"
-      bg={
-        colorMode === "light" ? "rgba(255,255,255,.6)" : "rgba(26, 32, 44, .6)"
-      }
+      // bg={
+      //   colorMode === "light" ? "rgba(255,255,255,.6)" : "rgba(26, 32, 44, .6)"
+      // }
+      bg={bgColor[colorMode]}
     >
       <MenuMotion
         menuOpen={isOpen}
@@ -82,7 +89,8 @@ const Header = (props) => {
             w="6"
             h="6"
             name="logo"
-            color={colorMode === "light" ? "rgba(26, 32, 44, 1)" : "brand.900"}
+            // color={colorMode === "light" ? "brand.400" : "brand.900"}
+            color={color[colorMode]}
           />
           <Text
             as="span"
@@ -96,7 +104,8 @@ const Header = (props) => {
             lineHeight="1"
             content="PEARSON"
             transform="matrix(0, 0, 0, 0, 8, 10)"
-            color={colorMode === "light" ? "rgba(26, 32, 44, 1)" : "brand.900"}
+            // color={colorMode === "light" ? "rgba(26, 32, 44, 1)" : "brand.900"}
+            color={color[colorMode]}
             opacity="0"
             transition="transform 0.3s ease-in-out 0s, opacity 0.3s ease-in-out 0s"
           >
