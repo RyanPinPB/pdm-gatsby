@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import {
   Box,
   Button,
@@ -18,6 +18,13 @@ import { useCycle } from "framer-motion"
 const Header = (props) => {
   const { colorMode, toggleColorMode } = useColorMode()
   const [isOpen, toggleOpen] = useCycle(false, true)
+
+  useEffect(() => {
+    console.log("header.js useEffect: colorMode: " + colorMode)
+    // return () => {
+    //   cleanup
+    // }
+  }, [colorMode])
 
   return (
     <Box

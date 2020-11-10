@@ -39,6 +39,7 @@ const Index = () => {
   const constraintsRef = useRef(null)
   const { width } = useWindowDimensions()
   // setting up monster's eye movement in Vision section
+  console.log("index.js useEffect colorMode: " + colorMode)
   useEffect(() => {
     if (width >= 993) {
       let mouseContainer = document.querySelector("#smooth-scroll")

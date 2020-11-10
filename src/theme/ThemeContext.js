@@ -1,4 +1,5 @@
 import React from "react"
+import { ColorModeProvider } from "@chakra-ui/core"
 
 //dont have to use this file if we use Chakra UI
 
@@ -16,16 +17,20 @@ class ThemeProvider extends React.Component {
     dark: false,
   }
   toggleDark = () => {
+    console.log("ThemeContext.js: toggle dark/light mode")
     let dark = !this.state.dark
     localStorage.setItem("dark", JSON.stringify(dark))
     this.setState({ dark })
   }
   componentDidMount() {
     // Getting dark mode value from localStorage!
+    console.log(this.state.dark)
     const lsDark = JSON.parse(localStorage.getItem("dark"))
     if (lsDark) {
+      console.log("ThemeContext.js: lsDark: " + lsDark)
       this.setState({ dark: lsDark })
     } else if (supportsDarkMode()) {
+      console.log("ThemeContext.js:  supports Dark Mode: true")
       this.setState({ dark: true })
     }
   }
@@ -39,7 +44,7 @@ class ThemeProvider extends React.Component {
           toggleDark: this.toggleDark,
         }}
       >
-        {children}
+        <ColorModeProvider>{children}</ColorModeProvider>
       </ThemeContext.Provider>
     )
   }
@@ -47,6 +52,7 @@ class ThemeProvider extends React.Component {
 export default ThemeContext
 export { ThemeProvider }
 
+// alternative dark mode
 // import { useEffect, useState } from 'react';
 
 // export const useDarkMode = () => {

@@ -63,7 +63,7 @@ const Layout = ({ children }) => {
     }
   }, [])
 
-  //fix the mobile 100vh issue for root div and mobile menu
+  //fix the mobile 100vh issue for smoothscroll div and mobile menu
   if (typeof window !== `undefined`) {
     let vh = window.innerHeight * 0.01
     document.documentElement.style.setProperty("--vh", `${vh}px`)
