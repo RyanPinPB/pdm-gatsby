@@ -54,7 +54,7 @@ const MenuToggle = ({ menuOpen, toggle }) => {
 
   return (
     <Button
-      // bg="transparent"
+      bg="transparent"
       cursor="pointer"
       mt="0px"
       // color={buttonColor}
