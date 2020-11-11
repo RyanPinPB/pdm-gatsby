@@ -19,13 +19,13 @@ const Header = (props) => {
   const { colorMode, toggleColorMode } = useColorMode()
   const [isOpen, toggleOpen] = useCycle(false, true)
 
-  console.log("header.js: colorMode=" + colorMode)
+  // console.log("header.js: colorMode=" + colorMode)
 
-  const bgColor = {
-    light: "rgba(255,255,255,.6)",
-    dark: "rgba(26, 32, 44, .6)",
-  }
-  const color = { light: "brand.400", dark: "brand.900" }
+  // const bgColor = {
+  //   light: "rgba(255,255,255,.6)",
+  //   dark: "rgba(26, 32, 44, .6)",
+  // }
+  // const color = { light: "brand.400", dark: "brand.900" }
 
   return (
     <Box
