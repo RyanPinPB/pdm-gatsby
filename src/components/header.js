@@ -41,18 +41,18 @@ const Header = (props) => {
       }
       transition="padding-top .3s ease-in-out .6s"
       as="header"
-      borderBottom={
-        props.transformedHeader
-          ? colorMode === "light"
-            ? "0.1rem solid rgba(0, 0, 0, 0.1)"
-            : "0.1rem solid rgba(255, 255, 255, 0.1)"
-          : "0.1rem solid rgba(0, 0, 0, 0)"
-      }
+      // borderBottom={
+      //   props.transformedHeader
+      //     ? colorMode === "light"
+      //       ? "0.1rem solid rgba(0, 0, 0, 0.1)"
+      //       : "0.1rem solid rgba(255, 255, 255, 0.1)"
+      //     : "0.1rem solid rgba(0, 0, 0, 0)"
+      // }
       zIndex="100"
       // bg={
       //   colorMode === "light" ? "rgba(255,255,255,.6)" : "rgba(26, 32, 44, .6)"
       // }
-      bg={bgColor[colorMode]}
+      // bg={bgColor[colorMode]}
     >
       <MenuMotion
         menuOpen={isOpen}
@@ -85,7 +85,7 @@ const Header = (props) => {
             h="6"
             name="logo"
             // color={colorMode === "light" ? "brand.400" : "brand.900"}
-            color={color[colorMode]}
+            // color={color[colorMode]}
           />
           <Text
             as="span"
@@ -100,7 +100,7 @@ const Header = (props) => {
             content="PEARSON"
             transform="matrix(0, 0, 0, 0, 8, 10)"
             // color={colorMode === "light" ? "rgba(26, 32, 44, 1)" : "brand.900"}
-            color={color[colorMode]}
+            // color={color[colorMode]}
             opacity="0"
             transition="transform 0.3s ease-in-out 0s, opacity 0.3s ease-in-out 0s"
           >

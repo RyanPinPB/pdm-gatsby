@@ -1,7 +1,7 @@
 import React from "react"
 import { ColorModeProvider } from "@chakra-ui/core"
 
-//dont have to use this file if we use Chakra UI
+//dont have to use this file if we use Chakra UI - using TurnOnColorMode instead
 
 const defaultState = {
   dark: false,
