@@ -46,8 +46,8 @@ const Footer = () => {
         <Stack>
           <Text fontWeight="bold">Pearson Digital Marketing</Text>
           <Text>Pacific Beach, San Diego CA</Text>
-          <ChakraLink href="mailto:ryanpinpb@gmail.com">
-            RyanPinPB@gmail.com
+          <ChakraLink href="mailto:Ryan@PearsonDigitalMarketing.com">
+            Ryan@PearsonDigitalMarketing.com
           </ChakraLink>
           <ChakraLink href="tel:8587408495">(858) 740-8495</ChakraLink>
         </Stack>

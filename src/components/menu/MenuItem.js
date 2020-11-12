@@ -39,6 +39,7 @@ export const MenuItem = ({ i, children, url, toggleMenu }) => {
 
     document.querySelector(".motion-menu-nav").classList.remove("active")
     document.querySelector(".site-header").classList.remove("menu-open")
+    document.querySelector(".color-mode-toggle").style.visibility = "unset"
 
     toggleMenu()
   }

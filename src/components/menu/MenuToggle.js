@@ -29,8 +29,8 @@ const MenuToggle = ({ menuOpen, toggle }) => {
     social_buttons.forEach((button) => {
       colorMode === "dark"
         ? menuOpen
-          ? (button.style.stroke = "black")
-          : (button.style.stroke = "white")
+          ? (button.style.stroke = "white")
+          : (button.style.stroke = "black")
         : !menuOpen
         ? (button.style.stroke = "white")
         : (button.style.stroke = "black")
@@ -42,9 +42,11 @@ const MenuToggle = ({ menuOpen, toggle }) => {
     if (menuOpen) {
       document.querySelector(".motion-menu-nav").classList.remove("active")
       document.querySelector(".site-header").classList.remove("menu-open")
+      document.querySelector(".color-mode-toggle").style.visibility = "unset"
     } else {
       document.querySelector(".site-header").classList.add("menu-open")
       document.querySelector(".motion-menu-nav").classList.add("active")
+      document.querySelector(".color-mode-toggle").style.visibility = "hidden"
     }
 
     toggle()

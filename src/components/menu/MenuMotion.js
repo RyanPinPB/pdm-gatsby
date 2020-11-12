@@ -13,8 +13,17 @@ const MenuMotion = (props) => {
   const { colorMode } = useColorMode()
 
   // adjusting menu background color by color mode
+
   const sidebarColor =
     colorMode === "dark" ? "rgba(255,255,255,.9)" : "rgba(26, 32, 44, .9)"
+
+  // useEffect(() => {
+  //   sidebarColor =
+  //     colorMode === "dark" ? "rgba(255,255,255,.9)" : "rgba(26, 32, 44, .9)"
+  //   // return () => {
+  //   //   cleanup
+  //   // }
+  // }, [colorMode])
 
   // define animation for the background
   const sidebar = {

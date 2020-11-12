@@ -115,6 +115,7 @@ const Header = (props) => {
         >
           <MenuToggle menuOpen={isOpen} toggle={toggleOpen} />
           <Button
+            className="color-mode-toggle"
             pl="0"
             pr="0"
             w="25px"
