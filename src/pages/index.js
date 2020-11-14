@@ -11,7 +11,7 @@ import {
   Flex,
   Icon,
 } from "@chakra-ui/core"
-
+// import Img from "gatsby-image"
 import { motion } from "framer-motion"
 import "../assets/home.scss"
 import { SiteLink as Link } from "../components/Link"
@@ -117,7 +117,6 @@ const Index = () => {
           >
             <Image
               w="100%"
-              maxW="225px"
               h="auto"
               objectFit="contain"
               alt="Sam Pearson"

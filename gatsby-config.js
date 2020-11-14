@@ -17,7 +17,13 @@ module.exports = {
     siteUrl: `https://pearsondigitalmarketing.com`,
   },
   plugins: [
+    `gatsby-plugin-chakra-ui`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-netlify-cache`,
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-smoothscroll`,
+    "gatsby-plugin-react-helmet",
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -81,8 +87,6 @@ module.exports = {
         // routeChangeEventName: "YOUR_ROUTE_CHANGE_EVENT_NAME",
       },
     },
-    `gatsby-plugin-chakra-ui`,
-    `gatsby-transformer-sharp`,
     {
       resolve: "gatsby-plugin-react-svg",
       options: {
@@ -91,10 +95,6 @@ module.exports = {
         },
       },
     },
-    `gatsby-plugin-netlify-cache`,
-    `gatsby-plugin-sass`,
-    `gatsby-plugin-smoothscroll`,
-    "gatsby-plugin-react-helmet",
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

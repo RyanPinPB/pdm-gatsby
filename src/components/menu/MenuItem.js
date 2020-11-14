@@ -23,7 +23,23 @@ const variants = {
 
 const LinkMotion = motion.custom(Link)
 
-const colors = ["#FF008C", "#D309E1", "#9C1AFF", "#7700FF", "#4400FF"]
+//color of the menu items list decoration
+// const colors = [
+//   "#FF008C",
+//   "#D309E1",
+//   "#AC1AFF",
+//   "#8800FF",
+//   "#5500FF",
+//   "#0000FF",
+// ]
+const colors = [
+  "rgba(177, 177, 177, 1)",
+  "rgba(157, 157, 157, 1)",
+  "rgba(137, 137, 137, 1)",
+  "rgba(117, 117, 117, 1)",
+  "rgba(97, 97, 97, 1)",
+  "rgba(77, 77, 77, 1)",
+]
 
 export const MenuItem = ({ i, children, url, toggleMenu }) => {
   const { colorMode } = useColorMode()
@@ -58,6 +74,7 @@ export const MenuItem = ({ i, children, url, toggleMenu }) => {
         width="fit-content"
         fontSize={["3rem", "4rem", "5rem", "6rem"]}
         fontWeight="700"
+        textTransform="uppercase"
         flex="1"
         onClick={closeMenu}
       >

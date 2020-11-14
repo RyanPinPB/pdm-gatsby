@@ -2,24 +2,40 @@ import React from "react"
 import { graphql, Link, navigate } from "gatsby"
 import Img from "gatsby-image"
 import ReactPaginate from "react-paginate"
+import "../assets/blog.scss"
 
-import {
-  Stack,
-  Box,
-  Heading,
-  Text,
-  Grid,
-  Button,
-  CSSReset,
-} from "@chakra-ui/core"
+import { Stack, Box, Heading, Text, Grid, Button } from "@chakra-ui/core"
 
 import Layout from "../components/layout"
 import { normalizePath } from "../utils/get-url-path"
+import SEO from "../components/seo"
+import FeaturedImage from "../assets/images/pearson-digital-marketing.png"
 
 export default ({ data, pageContext }) => (
   <Layout>
-    <CSSReset />
-    <Stack spacing={5}>
+    <SEO
+      title="Blog | Pearson Digital Marketing"
+      description="News and updates from Pearson Digital Marketing"
+      image={FeaturedImage}
+    />
+    <Heading
+      as="h1"
+      id="blog-watermark"
+      position={{ base: "relative", md: "absolute" }}
+      textAlign="center"
+      // color={{
+      //   base: "",
+      //   md: colorMode === "light" ? "rgba(0, 0, 0, 0)" : "rgba(255,255,255,1)",
+      // }}
+      opacity={{ base: 1, md: ".03" }}
+      lineHeight="1.1"
+      top={{ base: "0", md: "50%" }}
+      left={{ base: "0", md: "50%" }}
+      transform={{ base: "translate3D(0)", md: "translate3D(-50%,-50%,0)" }}
+    >
+      BLOG
+    </Heading>
+    <Stack spacing={5} my={20}>
       {data.allWpPost.nodes.map((page) => (
         <Box key={page.link}>
           <Link to={normalizePath(page.uri)}>
