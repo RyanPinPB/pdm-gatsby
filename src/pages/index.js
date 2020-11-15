@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react"
 import {
   Box,
   Text,
-  useColorMode,
+  // useColorMode,
   useColorModeValue,
   Heading,
   Image,
@@ -37,7 +37,7 @@ const WiggleArrowIcon = motion.custom(ArrowForwardIcon)
 const ServicesBox = motion.custom(Box)
 
 const Index = () => {
-  const { colorMode } = useColorMode()
+  // const { colorMode } = useColorMode()
   const constraintsRef = useRef(null)
   const { width } = useWindowDimensions()
   // setting up monster's eye movement in Vision section
@@ -68,7 +68,8 @@ const Index = () => {
   // const color = { light: "brand.400", dark: "brand.900" }
 
   const bgColor = useColorModeValue("#EDF2F7", "rgba(255,255,255,0.08)")
-  const color = useColorModeValue("brand.400", "brand.900")
+  const color = useColorModeValue("var(--blackFour)", "var(--white)")
+  // const color = useColorModeValue("currentColor", "currentColor")
 
   return (
     <Layout>
@@ -298,7 +299,8 @@ const Index = () => {
             ref={constraintsRef}
           >
             <ServicesBox
-              bg={colorMode === "light" ? "black" : "white"}
+              // bg={colorMode === "light" ? "var(--blackFour)" : "var(--white)"}
+              bg="currentColor"
               // cursor="grab"
               borderRadius="30px"
               width="150px"

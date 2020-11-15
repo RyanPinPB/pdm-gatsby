@@ -1,12 +1,18 @@
 import React from "react"
 import Layout from "../components/layout"
-import { Text, Heading, Flex, Stack, useColorMode } from "@chakra-ui/react"
+import {
+  Text,
+  Heading,
+  Flex,
+  Stack,
+  //  useColorMode
+} from "@chakra-ui/react"
 import "../assets/services.scss"
 import SEO from "../components/seo"
 import FeaturedImage from "../assets/images/pearson-digital-marketing.png"
 
 const Services = () => {
-  const { colorMode } = useColorMode()
+  // const { colorMode } = useColorMode()
   return (
     <Layout>
       <SEO
@@ -19,11 +25,12 @@ const Services = () => {
         id="services-watermark"
         position={{ base: "relative", md: "absolute" }}
         textAlign="center"
-        color={{
-          base: "",
-          md:
-            colorMode === "light" ? "rgba(0, 0, 0, 0)" : "rgba(255,255,255,1)",
-        }}
+        // color={{
+        //   base: "",
+        //   md:
+        //     colorMode === "light" ? "rgba(0, 0, 0, 0)" : "rgba(255,255,255,1)",
+        // }}
+        color="currentcolor"
         opacity={{ base: 1, md: ".03" }}
         lineHeight="1.1"
         top={{ base: "0", md: "50%" }}
