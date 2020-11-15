@@ -1,7 +1,7 @@
 import * as React from "react"
 import { motion } from "framer-motion"
 import { MenuItem } from "./MenuItem"
-import { List } from "@chakra-ui/core"
+import { List } from "@chakra-ui/react"
 import { useStaticQuery, graphql } from "gatsby"
 import { normalizePath } from "../../utils/get-url-path"
 

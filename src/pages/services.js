@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
-import { Text, Heading, Flex, Stack, useColorMode } from "@chakra-ui/core"
+import { Text, Heading, Flex, Stack, useColorMode } from "@chakra-ui/react"
 import "../assets/services.scss"
 import SEO from "../components/seo"
 import FeaturedImage from "../assets/images/pearson-digital-marketing.png"

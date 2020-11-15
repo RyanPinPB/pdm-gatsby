@@ -1,5 +1,5 @@
 import React from "react"
-import { ColorModeProvider } from "@chakra-ui/core"
+import { ColorModeProvider } from "@chakra-ui/react"
 
 //dont have to use this file if we use Chakra UI - using TurnOnColorMode instead
 

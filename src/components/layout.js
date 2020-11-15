@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from "react"
 import {
   Box,
-  CSSReset,
-  // ThemeProvider
-} from "@chakra-ui/core"
+  ChakraProvider,
+} from "@chakra-ui/react"
 import Scrollbar from "smooth-scrollbar"
 import { motion } from "framer-motion"
 
-// import customTheme from "../theme/theme"
+import customTheme from "../theme/theme"
 import Social from "./social"
 import Header from "./header"
 import Footer from "./footer"
 import "../assets/style.css"
-import TurnOnColorMode from "../theme/TurnOnColorMode"
 // import Loader from "./Loader"
 
 const ScrollContainer = motion.custom(Box)
@@ -78,9 +76,7 @@ const Layout = ({ children }) => {
   }
 
   return (
-    <TurnOnColorMode>
-      {/* <ThemeProvider theme={customTheme}> */}
-      <CSSReset />
+    <ChakraProvider theme={customTheme}>
       {/* <Loader /> */}
       <Header transformedHeader={headerActive} />
       <Social />
@@ -107,8 +103,7 @@ const Layout = ({ children }) => {
         </ContentContainer>
         <Footer />
       </ScrollContainer>
-      {/* </ThemeProvider> */}
-    </TurnOnColorMode>
+    </ChakraProvider>
   )
 }
 

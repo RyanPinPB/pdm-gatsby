@@ -17,7 +17,7 @@ module.exports = {
     siteUrl: `https://pearsondigitalmarketing.com`,
   },
   plugins: [
-    `gatsby-plugin-chakra-ui`,
+    `@chakra-ui/gatsby-plugin`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-netlify-cache`,

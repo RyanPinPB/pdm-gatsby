@@ -11,7 +11,7 @@ import {
   ModalCloseButton,
   useDisclosure,
   Stack,
-} from "@chakra-ui/core"
+} from "@chakra-ui/react"
 
 const MenuModal = (props) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -35,7 +35,7 @@ const MenuModal = (props) => {
           </ModalBody>
 
           <ModalFooter>
-            <Button variantColor="blue" mr={3} onClick={onClose}>
+            <Button colorScheme="blue" mr={3} onClick={onClose}>
               Close
             </Button>
             <Button variant="ghost">Secondary Action</Button>

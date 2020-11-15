@@ -4,10 +4,14 @@ import {
   Button,
   Icon,
   useColorMode,
+  useColorModeValue,
   Text,
   Flex,
   // Link as ChakraLink,
-} from "@chakra-ui/core"
+} from "@chakra-ui/react"
+
+import { MoonIcon } from "@chakra-ui/icons"
+import { SunIcon } from "@chakra-ui/icons"
 
 import { SiteLink as Link } from "./Link"
 
@@ -21,11 +25,17 @@ const Header = (props) => {
 
   // console.log("header.js: colorMode=" + colorMode)
 
-  const bgColor = {
-    light: "rgba(255,255,255,.6)",
-    dark: "rgba(26, 32, 44, .6)",
-  }
-  const color = { light: "brand.400", dark: "brand.900" }
+  // const bgColor = {
+  //   light: "rgba(255,255,255,.6)",
+  //   dark: "rgba(26, 32, 44, .6)",
+  // }
+  // const color = { light: "brand.400", dark: "brand.900" }
+
+  const bgColor = useColorModeValue(
+    "rgba(255,255,255,.6)",
+    "rgba(26, 32, 44, .6)"
+  )
+  const color = useColorModeValue("brand.400", "brand.900")
 
   return (
     <Box
@@ -52,7 +62,7 @@ const Header = (props) => {
       // bg={
       //   colorMode === "light" ? "rgba(255,255,255,.6)" : "rgba(26, 32, 44, .6)"
       // }
-      bg={bgColor[colorMode]}
+      bg={bgColor}
     >
       <MenuMotion
         menuOpen={isOpen}
@@ -80,13 +90,18 @@ const Header = (props) => {
           line-height="1"
           href="/"
         >
-          <Icon
-            w="6"
-            h="6"
-            name="logo"
-            // color={colorMode === "light" ? "brand.400" : "brand.900"}
-            color={color[colorMode]}
-          />
+          <Icon w="6" h="6" viewBox="0 0 472 472" color={color}>
+            <g fill="currentColor">
+              <rect
+                className="logo-rect"
+                x="0"
+                y="0"
+                width="272"
+                height="472"
+              />
+              <circle className="logo-circle" cx="272" cy="200" r="200" />
+            </g>
+          </Icon>
           <Text
             as="span"
             position="absolute"
@@ -100,7 +115,7 @@ const Header = (props) => {
             content="PEARSON"
             transform="matrix(0, 0, 0, 0, 8, 10)"
             // color={colorMode === "light" ? "rgba(26, 32, 44, 1)" : "brand.900"}
-            color={color[colorMode]}
+            color={color}
             opacity="0"
             transition="transform 0.3s ease-in-out 0s, opacity 0.3s ease-in-out 0s"
           >
@@ -126,9 +141,9 @@ const Header = (props) => {
             aria-label="Color mode toggle"
           >
             {colorMode === "light" ? (
-              <Icon width="23px" height="23px" name="moon" />
+              <MoonIcon width="23px" height="23px" />
             ) : (
-              <Icon width="23px" height="23px" name="sun" />
+              <SunIcon width="23px" height="23px" />
             )}
           </Button>
         </Flex>

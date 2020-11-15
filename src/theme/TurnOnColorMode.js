@@ -1,5 +1,5 @@
 import React from "react"
-import { ThemeProvider, ColorModeProvider } from "@chakra-ui/core"
+import { ThemeProvider, ColorModeProvider } from "@chakra-ui/react"
 import customTheme from "./theme"
 
 export default function TurnOnColorMode({ children }) {

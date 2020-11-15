@@ -4,7 +4,7 @@ import Img from "gatsby-image"
 import ReactPaginate from "react-paginate"
 import "../assets/blog.scss"
 
-import { Stack, Box, Heading, Text, Grid, Button } from "@chakra-ui/core"
+import { Stack, Box, Heading, Text, Grid, Button } from "@chakra-ui/react"
 
 import Layout from "../components/layout"
 import { normalizePath } from "../utils/get-url-path"
@@ -124,7 +124,7 @@ export const query = graphql`
         title
         featuredImage {
           node {
-            remoteFile {
+            localFile {
               ...Thumbnail
             }
           }

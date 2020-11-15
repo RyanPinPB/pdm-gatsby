@@ -10,7 +10,7 @@ import {
   Button,
   Divider,
   FormHelperText,
-} from "@chakra-ui/core"
+} from "@chakra-ui/react"
 
 const signupForm = () => {
   return (
@@ -55,7 +55,7 @@ const signupForm = () => {
           _hover={{ boxShadow: "lg" }}
           _active={{ boxShadow: "xl" }}
           variant="solid"
-          variantColor="blue"
+          colorScheme="blue"
         >
           Sign up!
         </Button>

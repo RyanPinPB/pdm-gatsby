@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, Button, ButtonGroup, useColorMode } from "@chakra-ui/core"
+import { Link, Button, ButtonGroup, useColorMode } from "@chakra-ui/react"
 import { FiFacebook, FiInstagram, FiTwitter } from "react-icons/fi"
 
 const Social = () => {
@@ -10,11 +10,12 @@ const Social = () => {
       as="aside"
       position="fixed"
       width="fit-content"
-      left={{ l: "5" }}
+      // left={{ l: "5" }}
+      left="5"
       bottom={[".65rem", ".65rem", "1.95rem", "1.3rem"]}
       d={["none", "none", "none", "flex"]}
       flexDirection="column"
-      spacing="2"
+      // spacing="2"
       zIndex="100"
     >
       <Link href="https://facebook.com" isExternal>
@@ -30,7 +31,7 @@ const Social = () => {
           fill={colorMode === "light" ? "black" : "white"}
         />
       </Link>
-      <Link href="https://instagram.com" isExternal>
+      <Link ml="0 !important" href="https://instagram.com" isExternal>
         <Button
           // className="social-button"
           bg="transparent"
@@ -44,7 +45,7 @@ const Social = () => {
           stroke={colorMode === "light" ? "white" : "black"}
         />
       </Link>
-      <Link href="https://twitter.com" isExternal>
+      <Link ml="0 !important" href="https://twitter.com" isExternal>
         <Button
           className="social-button"
           bg="transparent"

@@ -8,7 +8,7 @@ import {
   FormControl,
   Button,
   FormHelperText,
-} from "@chakra-ui/core"
+} from "@chakra-ui/react"
 
 const loginForm = () => {
   return (
@@ -36,7 +36,7 @@ const loginForm = () => {
           _hover={{ boxShadow: "lg" }}
           _active={{ boxShadow: "xl" }}
           variant="solid"
-          variantColor="blue"
+          colorScheme="blue"
         >
           Login
         </Button>

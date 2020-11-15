@@ -8,7 +8,7 @@ import {
   TabPanels,
   TabPanel,
   useColorMode,
-} from "@chakra-ui/core"
+} from "@chakra-ui/react"
 
 import Logo from "../assets/images/logo192x192.png"
 import SignupForm from "./signupForm"

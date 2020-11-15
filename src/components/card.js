@@ -8,7 +8,7 @@ import {
   Stack,
   Icon,
   useColorMode,
-} from "@chakra-ui/core"
+} from "@chakra-ui/react"
 
 import pbhomes from "../assets/images/projects/pbhomes.png"
 
@@ -27,10 +27,10 @@ const Card = () => {
       <Image src={pbhomes} alt="Course Cover" />
       <Box p={5}>
         <Stack isInline align="baseline">
-          <Badge variant="solid" variantColor="orange" rounded="full" px={2}>
+          <Badge variant="solid" colorScheme="orange" rounded="full" px={2}>
             NEW!
           </Badge>
-          <Badge variant="solid" variantColor="orange" rounded="full" px={2}>
+          <Badge variant="solid" colorScheme="orange" rounded="full" px={2}>
             React
           </Badge>
           <Text
@@ -71,7 +71,7 @@ const Card = () => {
         </Stack>
         <Box textAlign="center">
           <Button
-            variantColor="orange"
+            colorScheme="orange"
             size="lg"
             mt={3}
             boxShadow="sm"

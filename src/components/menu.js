@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
-import { Menu, Button, Grid, Box } from "@chakra-ui/core"
+import { Menu, Button, Grid, Box } from "@chakra-ui/react"
 import { normalizePath } from "../utils/get-url-path"
 
 export default () => {

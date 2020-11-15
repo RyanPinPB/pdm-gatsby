@@ -8,7 +8,7 @@ import {
   Button,
   Textarea,
   useColorMode,
-} from "@chakra-ui/core"
+} from "@chakra-ui/react"
 
 import * as Yup from "yup"
 

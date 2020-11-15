@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from "react"
 import { motion } from "framer-motion"
-import { useColorMode } from "@chakra-ui/core"
+import { useColorMode } from "@chakra-ui/react"
 
 import useWindowDimensions from "../../utils/window-dimensions"
 import Navigation from "./Navigation.js"

@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, Heading, AspectRatioBox, Button, Image } from "@chakra-ui/core"
+import { Link, Heading, AspectRatio, Button, Image } from "@chakra-ui/react"
 import { motion } from "framer-motion"
 
 const MotionButton = motion.custom(Button)
@@ -26,12 +26,14 @@ const Project = ({ title, projLink, desc, imgSrc, imgAlt, ...rest }) => {
       >
         {title}
       </Heading>
-      <AspectRatioBox as="figure" maxW="100%" ratio={0.75}>
+      <AspectRatio as="figure" maxW="100%" ratio={0.75}>
         <Image src={imgSrc} alt={imgAlt} objectFit="cover" />
-      </AspectRatioBox>
+      </AspectRatio>
       <MotionButton
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
+        // whileHover={{ scale: 1.1 }}
+        // _hover={{ scale: 1.1 }}
+        // whileTap={{ scale: 0.9 }}
+        // _active={{ scale: 0.9 }}
         bg="rgba(26, 32, 44, .8)"
         color="white"
         zIndex="2"

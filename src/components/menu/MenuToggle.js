@@ -1,6 +1,6 @@
 import * as React from "react"
 // import { motion } from "framer-motion"
-import { Button, useColorMode } from "@chakra-ui/core"
+import { Button, useColorMode } from "@chakra-ui/react"
 
 const MenuToggle = ({ menuOpen, toggle }) => {
   const { colorMode } = useColorMode()

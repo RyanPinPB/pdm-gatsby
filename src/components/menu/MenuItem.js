@@ -1,6 +1,6 @@
 import * as React from "react"
 import { motion } from "framer-motion"
-import { useColorMode, Link } from "@chakra-ui/core"
+import { useColorMode, Link } from "@chakra-ui/react"
 
 // import Link from "../Link"
 

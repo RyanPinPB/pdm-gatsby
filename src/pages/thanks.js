@@ -1,6 +1,6 @@
 import React from "react"
 
-import { Heading, Flex } from "@chakra-ui/core"
+import { Heading, Flex } from "@chakra-ui/react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import FeaturedImage from "../assets/images/pearson-digital-marketing.png"

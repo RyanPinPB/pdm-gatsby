@@ -3,14 +3,14 @@ import {
   Box,
   Text,
   useColorMode,
+  useColorModeValue,
   Heading,
   Image,
   Stack,
   ButtonGroup,
   Button,
   Flex,
-  Icon,
-} from "@chakra-ui/core"
+} from "@chakra-ui/react"
 // import Img from "gatsby-image"
 import { motion } from "framer-motion"
 import "../assets/home.scss"
@@ -19,6 +19,8 @@ import Layout from "../components/layout"
 import Project from "../components/project"
 import useWindowDimensions from "../utils/window-dimensions"
 import SEO from "../components/seo"
+
+import { ArrowForwardIcon } from "@chakra-ui/icons"
 
 //images for intro section and project section
 import Pbhomes from "../assets/images/projects/pbh-desktop-phone-desk.jpg"
@@ -31,7 +33,7 @@ import RyanHeadshot from "../assets/images/ryan-headshot-fade.png"
 import FeaturedImage from "../assets/images/pearson-digital-marketing.png"
 
 const ArrowLink = motion.custom(Link)
-const WiggleArrowIcon = motion.custom(Icon)
+const WiggleArrowIcon = motion.custom(ArrowForwardIcon)
 const ServicesBox = motion.custom(Box)
 
 const Index = () => {
@@ -59,11 +61,14 @@ const Index = () => {
     }
   }, [width])
 
-  const bgColor = {
-    light: "#EDF2F7",
-    dark: "rgba(255,255,255,0.08)",
-  }
-  const color = { light: "brand.400", dark: "brand.900" }
+  // const bgColor = {
+  //   light: "#EDF2F7",
+  //   dark: "rgba(255,255,255,0.08)",
+  // }
+  // const color = { light: "brand.400", dark: "brand.900" }
+
+  const bgColor = useColorModeValue("#EDF2F7", "rgba(255,255,255,0.08)")
+  const color = useColorModeValue("brand.400", "brand.900")
 
   return (
     <Layout>
@@ -165,11 +170,7 @@ const Index = () => {
           </Text>
           <ButtonGroup spacing="8" py="4">
             <Link href="/projects" _hover={{ textDecoration: "none" }}>
-              <Button
-                bg={bgColor[colorMode]}
-                color={color[colorMode]}
-                size="lg"
-              >
+              <Button bg={bgColor} color={color} size="lg">
                 View Projects
               </Button>
             </Link>
@@ -182,8 +183,8 @@ const Index = () => {
               <Button
                 d={{ base: "none", md: "inline-flex" }}
                 size="lg"
-                bg={bgColor[colorMode]}
-                color={color[colorMode]}
+                bg={bgColor}
+                color={color}
               >
                 Contact Us
               </Button>
@@ -212,10 +213,10 @@ const Index = () => {
           <Heading size="2xl">Projects</Heading>
           <Link href="/projects" _hover={{ textDecoration: "none" }}>
             <Button
-              rightIcon="arrow-forward"
+              rightIcon={<ArrowForwardIcon />}
               size="lg"
-              bg={bgColor[colorMode]}
-              color={color[colorMode]}
+              bg={bgColor}
+              color={color}
             >
               View all
             </Button>
@@ -279,9 +280,9 @@ const Index = () => {
             <Link href="/services" _hover={{ textDecoration: "none" }}>
               <Button
                 size="lg"
-                rightIcon="arrow-forward"
-                bg={bgColor[colorMode]}
-                color={color[colorMode]}
+                rightIcon={<ArrowForwardIcon />}
+                bg={bgColor}
+                color={color}
               >
                 Our services
               </Button>
@@ -345,9 +346,9 @@ const Index = () => {
             <Link href="/vision" _hover={{ textDecoration: "none" }}>
               <Button
                 size="lg"
-                rightIcon="arrow-forward"
-                bg={bgColor[colorMode]}
-                color={color[colorMode]}
+                rightIcon={<ArrowForwardIcon />}
+                bg={bgColor}
+                color={color}
               >
                 Our vision
               </Button>
@@ -407,7 +408,6 @@ const Index = () => {
                 ease: "easeInOut",
                 duration: 0.6,
               }}
-              name="arrow-forward"
             />
           </ArrowLink>
         </Flex>

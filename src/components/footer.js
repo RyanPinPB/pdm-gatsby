@@ -8,7 +8,7 @@ import {
   ListItem,
   Box,
   Link as ChakraLink,
-} from "@chakra-ui/core"
+} from "@chakra-ui/react"
 
 // import { SiteLink } from "./Link"
 import { Link } from "gatsby"

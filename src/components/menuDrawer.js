@@ -8,7 +8,7 @@ import {
   DrawerBody,
   useDisclosure,
   CloseButton,
-} from "@chakra-ui/core"
+} from "@chakra-ui/react"
 
 const MenuDrawer = (props) => {
   const { isOpen, onOpen, onClose } = useDisclosure()

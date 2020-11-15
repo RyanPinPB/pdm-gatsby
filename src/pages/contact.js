@@ -1,6 +1,6 @@
 import React from "react"
 
-import { useColorMode, Heading, Flex } from "@chakra-ui/core"
+import { useColorMode, Heading, Flex } from "@chakra-ui/react"
 import Layout from "../components/layout"
 import FormikForm from "../components/FormikForm"
 import "../assets/contact.scss"
