@@ -29,11 +29,11 @@ const MenuToggle = ({ menuOpen, toggle }) => {
     social_buttons.forEach((button) => {
       colorMode === "dark"
         ? menuOpen
-          ? (button.style.stroke = "white")
+          ? (button.style.stroke = "unset")
           : (button.style.stroke = "black")
         : !menuOpen
         ? (button.style.stroke = "white")
-        : (button.style.stroke = "black")
+        : (button.style.stroke = "unset")
     })
   }
 

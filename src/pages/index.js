@@ -2,8 +2,6 @@ import React, { useEffect, useRef } from "react"
 import {
   Box,
   Text,
-  // useColorMode,
-  useColorModeValue,
   Heading,
   Image,
   Stack,
@@ -37,11 +35,9 @@ const WiggleArrowIcon = motion.custom(ArrowForwardIcon)
 const ServicesBox = motion.custom(Box)
 
 const Index = () => {
-  // const { colorMode } = useColorMode()
   const constraintsRef = useRef(null)
   const { width } = useWindowDimensions()
   // setting up monster's eye movement in Vision section
-  // console.log("index.js colorMode=" + colorMode)
   useEffect(() => {
     if (width >= 993) {
       let mouseContainer = document.querySelector("#smooth-scroll")
@@ -61,22 +57,11 @@ const Index = () => {
     }
   }, [width])
 
-  // const bgColor = {
-  //   light: "#EDF2F7",
-  //   dark: "rgba(255,255,255,0.08)",
-  // }
-  // const color = { light: "brand.400", dark: "brand.900" }
-
-  const bgColor = useColorModeValue("#EDF2F7", "rgba(255,255,255,0.08)")
-  const color = useColorModeValue("var(--blackFour)", "var(--white)")
-  // const color = useColorModeValue("currentColor", "currentColor")
-
   return (
     <Layout>
       <SEO
         title="Web Development and Marketing | Pearson Digital Marketing"
         description="Need a new website? Need leads? Free consultation for learning about what options are available"
-        // image="/assets/images/pearson-digital-marketing.png"
         image={FeaturedImage}
       />
       {/* Intro hero/banner section  */}
@@ -144,7 +129,6 @@ const Index = () => {
             as="span"
             textAlign="center"
           >
-            {/* The right Pearson for the job. */}
             Your customers deserve an amazing online experience.
           </Text>
           <Heading
@@ -171,9 +155,7 @@ const Index = () => {
           </Text>
           <ButtonGroup spacing="8" py="4">
             <Link href="/projects" _hover={{ textDecoration: "none" }}>
-              <Button bg={bgColor} color={color} size="lg">
-                View Projects
-              </Button>
+              <Button size="lg">View Projects</Button>
             </Link>
             <Link
               className="contact-button"
@@ -181,12 +163,7 @@ const Index = () => {
               href="/contact"
               _hover={{ textDecoration: "none" }}
             >
-              <Button
-                d={{ base: "none", md: "inline-flex" }}
-                size="lg"
-                bg={bgColor}
-                color={color}
-              >
+              <Button d={{ base: "none", md: "inline-flex" }} size="lg">
                 Contact Us
               </Button>
             </Link>
@@ -213,12 +190,7 @@ const Index = () => {
         <Flex as="header" justify="space-between" align="center">
           <Heading size="2xl">Projects</Heading>
           <Link href="/projects" _hover={{ textDecoration: "none" }}>
-            <Button
-              rightIcon={<ArrowForwardIcon />}
-              size="lg"
-              bg={bgColor}
-              color={color}
-            >
+            <Button rightIcon={<ArrowForwardIcon />} size="lg">
               View all
             </Button>
           </Link>
@@ -279,12 +251,7 @@ const Index = () => {
               landing page configuration.
             </Text>
             <Link href="/services" _hover={{ textDecoration: "none" }}>
-              <Button
-                size="lg"
-                rightIcon={<ArrowForwardIcon />}
-                bg={bgColor}
-                color={color}
-              >
+              <Button size="lg" rightIcon={<ArrowForwardIcon />}>
                 Our services
               </Button>
             </Link>
@@ -299,14 +266,10 @@ const Index = () => {
             ref={constraintsRef}
           >
             <ServicesBox
-              // bg={colorMode === "light" ? "var(--blackFour)" : "var(--white)"}
               bg="currentColor"
-              // cursor="grab"
               borderRadius="30px"
               width="150px"
               height="150px"
-              // drag
-              // dragConstraints={constraintsRef}
               animate={{
                 scale: [1, 2, 2, 1, 1],
                 rotate: [0, 0, 270, 270, 0],
@@ -346,12 +309,7 @@ const Index = () => {
               brand with friends, providing residual marketing.
             </Text>
             <Link href="/vision" _hover={{ textDecoration: "none" }}>
-              <Button
-                size="lg"
-                rightIcon={<ArrowForwardIcon />}
-                bg={bgColor}
-                color={color}
-              >
+              <Button size="lg" rightIcon={<ArrowForwardIcon />}>
                 Our vision
               </Button>
             </Link>

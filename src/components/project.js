@@ -30,10 +30,6 @@ const Project = ({ title, projLink, desc, imgSrc, imgAlt, ...rest }) => {
         <Image src={imgSrc} alt={imgAlt} objectFit="cover" />
       </AspectRatio>
       <MotionButton
-        // whileHover={{ scale: 1.1 }}
-        // _hover={{ scale: 1.1 }}
-        // whileTap={{ scale: 0.9 }}
-        // _active={{ scale: 0.9 }}
         bg="rgba(26, 32, 44, .8)"
         color="white"
         zIndex="2"
@@ -42,7 +38,7 @@ const Project = ({ title, projLink, desc, imgSrc, imgAlt, ...rest }) => {
         left="5"
         size="lg"
         transition=" backgroundColor .250s ease-in-out, transform 0s linear"
-        _hover={{ bg: "rgba(26, 32, 44, 1)" }}
+        _hover={{ bg: "rgba(26, 32, 44, .7)" }}
         _active={{ bg: "rgba(26, 32, 44, 1)" }}
       >
         View

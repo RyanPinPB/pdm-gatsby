@@ -1,13 +1,12 @@
 import React from "react"
 
 import Layout from "../components/layout"
-import { Text, Heading, Stack, Flex, useColorMode } from "@chakra-ui/react"
+import { Text, Heading, Stack, Flex } from "@chakra-ui/react"
 import "../assets/vision.scss"
 import SEO from "../components/seo"
 import FeaturedImage from "../assets/images/pearson-digital-marketing.png"
 
 const Vision = () => {
-  const { colorMode } = useColorMode()
   return (
     <Layout>
       <SEO
@@ -20,11 +19,6 @@ const Vision = () => {
         id="vision-watermark"
         position={{ base: "relative", md: "absolute" }}
         textAlign="center"
-        color={{
-          base: "",
-          md:
-            colorMode === "light" ? "rgba(0, 0, 0, 0)" : "rgba(255,255,255,1)",
-        }}
         opacity={{ base: 1, md: ".03" }}
         lineHeight="1.1"
         top={{ base: "0", md: "50%" }}
@@ -33,7 +27,7 @@ const Vision = () => {
       >
         Vision
       </Heading>
-      <Stack pt={["12", "16", "20"]} spacing={["12", "16", "20"]}>
+      <Stack py={["12", "16", "20"]} spacing={["12", "16", "20"]}>
         <Flex as="section" direction="column">
           <Heading>Easy</Heading>
           <Text maxWidth="600px">

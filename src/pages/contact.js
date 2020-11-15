@@ -1,6 +1,6 @@
 import React from "react"
 
-import { useColorMode, Heading, Flex } from "@chakra-ui/react"
+import { Heading, Flex } from "@chakra-ui/react"
 import Layout from "../components/layout"
 import FormikForm from "../components/FormikForm"
 import "../assets/contact.scss"
@@ -8,8 +8,6 @@ import SEO from "../components/seo"
 import FeaturedImage from "../assets/images/pearson-digital-marketing.png"
 
 const Contact = () => {
-  const { colorMode } = useColorMode()
-
   return (
     <Layout>
       <SEO
@@ -22,11 +20,6 @@ const Contact = () => {
         id="contact-us"
         position={{ base: "relative", md: "absolute" }}
         textAlign="center"
-        color={{
-          base: "",
-          md:
-            colorMode === "light" ? "rgba(0, 0, 0, 0)" : "rgba(255,255,255,1)",
-        }}
         opacity={{ base: 1, md: ".03" }}
         lineHeight="1.1"
         top={{ base: "0", md: "50%" }}

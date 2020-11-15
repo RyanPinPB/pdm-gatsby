@@ -23,14 +23,6 @@ const Header = (props) => {
   const { colorMode, toggleColorMode } = useColorMode()
   const [isOpen, toggleOpen] = useCycle(false, true)
 
-  // console.log("header.js: colorMode=" + colorMode)
-
-  // const bgColor = {
-  //   light: "rgba(255,255,255,.6)",
-  //   dark: "rgba(26, 32, 44, .6)",
-  // }
-  // const color = { light: "brand.400", dark: "brand.900" }
-
   const bgColor = useColorModeValue(
     "rgba(255,255,255,.6)",
     "rgba(26, 32, 44, .6)"
@@ -59,9 +51,6 @@ const Header = (props) => {
           : "0.1rem solid rgba(0, 0, 0, 0)"
       }
       zIndex="100"
-      // bg={
-      //   colorMode === "light" ? "rgba(255,255,255,.6)" : "rgba(26, 32, 44, .6)"
-      // }
       bg={bgColor}
     >
       <MenuMotion
@@ -114,7 +103,6 @@ const Header = (props) => {
             lineHeight="1"
             content="PEARSON"
             transform="matrix(0, 0, 0, 0, 8, 10)"
-            // color={colorMode === "light" ? "rgba(26, 32, 44, 1)" : "brand.900"}
             color={color}
             opacity="0"
             transition="transform 0.3s ease-in-out 0s, opacity 0.3s ease-in-out 0s"

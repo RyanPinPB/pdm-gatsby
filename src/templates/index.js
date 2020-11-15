@@ -23,10 +23,6 @@ export default ({ data, pageContext }) => (
       id="blog-watermark"
       position={{ base: "relative", md: "absolute" }}
       textAlign="center"
-      // color={{
-      //   base: "",
-      //   md: colorMode === "light" ? "rgba(0, 0, 0, 0)" : "rgba(255,255,255,1)",
-      // }}
       opacity={{ base: 1, md: ".03" }}
       lineHeight="1.1"
       top={{ base: "0", md: "50%" }}
@@ -35,9 +31,9 @@ export default ({ data, pageContext }) => (
     >
       BLOG
     </Heading>
-    <Stack spacing={5} my={20}>
-      {data.allWpPost.nodes.map((page) => (
-        <Box key={page.link}>
+    <Stack as="section" spacing={5} my={20}>
+      {data.allWpPost.nodes.map((page, i) => (
+        <Box key={i}>
           <Link to={normalizePath(page.uri)}>
             <Box p={5} shadow="md" borderWidth="1px">
               <Grid templateColumns="1fr 2fr" gap={6}>

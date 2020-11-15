@@ -10,12 +10,10 @@ const Social = () => {
       as="aside"
       position="fixed"
       width="fit-content"
-      // left={{ l: "5" }}
       left="5"
       bottom={[".65rem", ".65rem", "1.95rem", "1.3rem"]}
       d={["none", "none", "none", "flex"]}
       flexDirection="column"
-      // spacing="2"
       zIndex="100"
     >
       <Link href="https://facebook.com" isExternal>
@@ -23,7 +21,6 @@ const Social = () => {
           className="social-button"
           bg="transparent"
           variant="solid"
-          size="md"
           p="2"
           rounded="50%"
           as={FiFacebook}
@@ -35,7 +32,6 @@ const Social = () => {
         <Button
           // className="social-button"
           bg="transparent"
-          size="md"
           p="2"
           variant="solid"
           as={FiInstagram}
@@ -49,7 +45,6 @@ const Social = () => {
         <Button
           className="social-button"
           bg="transparent"
-          size="md"
           p="2"
           variant="solid"
           fill={colorMode === "light" ? "black" : "white"}
