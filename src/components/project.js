@@ -18,9 +18,13 @@ const Project = ({ title, projLink, desc, imgSrc, imgAlt, ...rest }) => {
         as="h3"
         zIndex="2"
         color="brand.900"
+        bg={{ base: "rgba(26, 32, 44, .8)", md: "rgba(26, 32, 44, 0)" }}
         position="absolute"
-        top="5"
-        left="5"
+        top={{ base: "0", md: "5" }}
+        py={{ base: "4", md: "0" }}
+        textAlign={{ base: "center", md: "unset" }}
+        left={{ base: "0", md: "5" }}
+        w={{ base: "100%", md: "unset" }}
         fontSize="2xl"
         fontWeight="900"
       >

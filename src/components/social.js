@@ -16,7 +16,7 @@ const Social = () => {
       flexDirection="column"
       zIndex="100"
     >
-      <Link href="https://facebook.com" isExternal>
+      <Link href="https://www.facebook.com/PearsonDigitalMarketing" isExternal>
         <Button
           className="social-button"
           bg="transparent"
@@ -28,7 +28,11 @@ const Social = () => {
           fill={colorMode === "light" ? "black" : "white"}
         />
       </Link>
-      <Link ml="0 !important" href="https://instagram.com" isExternal>
+      <Link
+        ml="0 !important"
+        href="https://www.instagram.com/pearsondigitalmarketing"
+        isExternal
+      >
         <Button
           // className="social-button"
           bg="transparent"
@@ -41,7 +45,11 @@ const Social = () => {
           stroke={colorMode === "light" ? "white" : "black"}
         />
       </Link>
-      <Link ml="0 !important" href="https://twitter.com" isExternal>
+      <Link
+        ml="0 !important"
+        href="https://twitter.com/digital_pearson"
+        isExternal
+      >
         <Button
           className="social-button"
           bg="transparent"

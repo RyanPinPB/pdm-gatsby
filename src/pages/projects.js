@@ -34,7 +34,7 @@ const Projects = () => {
       >
         Projects
       </Heading>
-      <Stack mt={12} spacing={12}>
+      <Stack my={12} spacing={12}>
         <Project
           title="Pacific Beach Homes"
           projLink="https://pacificbeachhomes.com/"
