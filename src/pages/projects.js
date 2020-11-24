@@ -1,19 +1,54 @@
 import React from "react"
-
 import Layout from "../components/layout"
 import Project from "../components/project"
-
-import Pbhomes from "../assets/images/projects/pbh-desktop-phone-desk.jpg"
-import Bishop from "../assets/images/projects/bishop-iMac-blue.png"
-import Ravenous from "../assets/images/projects/ravenous-macbook-desk.png"
-import Travel from "../assets/images/projects/travel-imac-laptop-light.png"
-import Chiggy from "../assets/images/projects/chiggybank.jpg"
 import { Stack, Heading } from "@chakra-ui/react"
 import "../assets/projects.scss"
 import SEO from "../components/seo"
 import FeaturedImage from "../assets/images/pearson-digital-marketing.png"
 
-const Projects = () => {
+export const query = graphql`
+  query {
+    pbHomes: file(relativePath: { eq: "projects/pbh-desktop-phone-desk.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    bishop: file(relativePath: { eq: "projects/bishop-iMac-blue.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    ravenous: file(relativePath: { eq: "projects/ravenous-macbook-desk.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    travel: file(
+      relativePath: { eq: "projects/travel-imac-laptop-light.png" }
+    ) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    chiggy: file(relativePath: { eq: "projects/chiggybank.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
+
+const Projects = ({ data }) => {
   return (
     <Layout>
       <SEO
@@ -37,37 +72,37 @@ const Projects = () => {
       <Stack my={12} spacing={12}>
         <Project
           title="Pacific Beach Homes"
-          projLink="https://pacificbeachhomes.com/"
-          desc="Pacific Beach Homes helps buyers and sellers in Pacific Beach, San Diego learn about the processes of buying and selling."
-          imgSrc={Pbhomes}
+          projLink="https://pacificbeachhomes.com"
+          desc="The future can be even brighter but a goal without a plan is just a wish"
+          imgSrc={data.pbHomes.childImageSharp.fluid}
           imgAlt="Pacific Beach Homes Real Estate"
         />
         <Project
           title="R.H. Bishop Books"
           projLink="https://www.rhbishopbooks.com/"
-          desc="A modern comedic mystery series"
-          imgSrc={Bishop}
+          desc="You deserve good things. With a whooping 10-15% interest rate per annum, grow your savings on your own terms with our completely automated process"
+          imgSrc={data.bishop.childImageSharp.fluid}
           imgAlt="R.H. Bishop Books"
         />
         <Project
           title="Ravenous"
           projLink="https://ravenoussearch.netlify.app/"
-          desc="Find food and other businesses nearby, ranked by reviews"
-          imgSrc={Ravenous}
+          desc="You deserve good things. With a whooping 10-15% interest rate per annum, grow your savings on your own terms with our completely automated process"
+          imgSrc={data.ravenous.childImageSharp.fluid}
           imgAlt="Ravenous"
         />
         <Project
           title="Travel"
           projLink="https://travel.ryanpearson.website/"
-          desc="View places and people of interest"
-          imgSrc={Travel}
+          desc="You deserve good things. With a whooping 10-15% interest rate per annum, grow your savings on your own terms with our completely automated process"
+          imgSrc={data.travel.childImageSharp.fluid}
           imgAlt="Travel"
         />
         <Project
           title="Chiggy Bank"
           projLink="https://chiggybank.herokuapp.com/"
           desc="Chiggy Bank is a piggy bank for chickens. Test your theories on investing with fake money."
-          imgSrc={Chiggy}
+          imgSrc={data.chiggy.childImageSharp.fluid}
           imgAlt="Chiggy Bank"
         />
       </Stack>

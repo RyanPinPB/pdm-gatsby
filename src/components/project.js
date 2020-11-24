@@ -1,6 +1,7 @@
 import React from "react"
-import { Link, Heading, AspectRatio, Button, Image } from "@chakra-ui/react"
+import { Link, Heading, AspectRatio, Button } from "@chakra-ui/react"
 import { motion } from "framer-motion"
+import Img from "gatsby-image"
 
 const MotionButton = motion.custom(Button)
 
@@ -31,7 +32,16 @@ const Project = ({ title, projLink, desc, imgSrc, imgAlt, ...rest }) => {
         {title}
       </Heading>
       <AspectRatio as="figure" maxW="100%" ratio={0.75}>
-        <Image src={imgSrc} alt={imgAlt} objectFit="cover" />
+        <Img
+          className="project-image"
+          fluid={imgSrc}
+          alt={imgAlt}
+          style={{
+            objectFit: "cover",
+            maxWidth: "100%",
+            position: "aboslute",
+          }}
+        />
       </AspectRatio>
       <MotionButton
         bg="rgba(26, 32, 44, .8)"

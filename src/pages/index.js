@@ -3,13 +3,11 @@ import {
   Box,
   Text,
   Heading,
-  Image,
   Stack,
   ButtonGroup,
   Button,
   Flex,
 } from "@chakra-ui/react"
-// import Img from "gatsby-image"
 import { motion } from "framer-motion"
 import "../assets/home.scss"
 import { SiteLink as Link } from "../components/Link"
@@ -17,24 +15,73 @@ import Layout from "../components/layout"
 import Project from "../components/project"
 import useWindowDimensions from "../utils/window-dimensions"
 import SEO from "../components/seo"
+import Img from "gatsby-image"
+import { graphql } from "gatsby"
 
 import { ArrowForwardIcon } from "@chakra-ui/icons"
-
-//images for intro section and project section
-import Pbhomes from "../assets/images/projects/pbh-desktop-phone-desk.jpg"
-import Bishop from "../assets/images/projects/bishop-iMac-blue.png"
-import Ravenous from "../assets/images/projects/ravenous-macbook-desk.png"
-import Travel from "../assets/images/projects/travel-imac-laptop-light.png"
-import Chiggy from "../assets/images/projects/chiggybank.jpg"
-import SamHeadshot from "../assets/images/sam-headshot-fade.png"
-import RyanHeadshot from "../assets/images/ryan-headshot-fade.png"
 import FeaturedImage from "../assets/images/pearson-digital-marketing.png"
 
 const ArrowLink = motion.custom(Link)
 const WiggleArrowIcon = motion.custom(ArrowForwardIcon)
 const ServicesBox = motion.custom(Box)
 
-const Index = () => {
+export const query = graphql`
+  query {
+    ryanHeadshot: file(relativePath: { eq: "ryan-headshot-fade.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 265, maxHeight: 295) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    samHeadshot: file(relativePath: { eq: "sam-headshot-fade.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    pbHomes: file(relativePath: { eq: "projects/pbh-desktop-phone-desk.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    bishop: file(relativePath: { eq: "projects/bishop-iMac-blue.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    ravenous: file(relativePath: { eq: "projects/ravenous-macbook-desk.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    travel: file(
+      relativePath: { eq: "projects/travel-imac-laptop-light.png" }
+    ) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    chiggy: file(relativePath: { eq: "projects/chiggybank.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
+
+const Index = ({ data }) => {
   const constraintsRef = useRef(null)
   const { width } = useWindowDimensions()
   // setting up monster's eye movement in Vision section
@@ -83,21 +130,17 @@ const Index = () => {
           align="flex-end"
           isInline
         >
-          <Flex
+          <Img
             className="ryan-pearson"
-            align="baseline"
-            as="figure"
-            maxW="265px"
-            flex="1 1 20%"
-          >
-            <Image
-              width="100%"
-              height="auto"
-              objectFit="cover"
-              alt="Ryan Pearson"
-              src={RyanHeadshot}
-            />
-          </Flex>
+            fluid={data.ryanHeadshot.childImageSharp.fluid}
+            alt="Ryan Pearson"
+            style={{
+              display: "flex",
+              alignItems: "baseline",
+              maxWidth: "265px",
+              flex: "1 1 20%",
+            }}
+          />
           <Flex
             d={{ xl: "none" }}
             className="sam-pearson"
@@ -106,12 +149,16 @@ const Index = () => {
             maxW="225px"
             flex="1 1 13%"
           >
-            <Image
-              w="100%"
-              h="auto"
-              objectFit="contain"
+            <Img
+              className="sam-pearson"
+              fluid={data.samHeadshot.childImageSharp.fluid}
               alt="Sam Pearson"
-              src={SamHeadshot}
+              style={{
+                display: "flex",
+                alignItems: "baseline",
+                maxWidth: "225px",
+                width: "100%",
+              }}
             />
           </Flex>
         </Stack>
@@ -172,19 +219,20 @@ const Index = () => {
         <Flex
           className="sam-pearson-pic"
           as="figure"
-          maxW="400px"
           d={{ base: "none", xl: "flex" }}
           w={{ base: "0%", xl: "17%" }}
         >
-          <Image
-            w="100%"
-            h="auto"
-            objectFit="contain"
+          <Img
+            fluid={data.samHeadshot.childImageSharp.fluid}
             alt="Sam Pearson"
-            src={SamHeadshot}
+            style={{
+              width: "100%",
+              maxWidth: "400px",
+            }}
           />
         </Flex>
       </Flex>
+
       {/* Project section  */}
       <Box py={["12", "16", "20"]} as="section" className="projects">
         <Flex as="header" justify="space-between" align="center">
@@ -200,35 +248,35 @@ const Index = () => {
             title="Pacific Beach Homes"
             projLink="https://pacificbeachhomes.com"
             desc="The future can be even brighter but a goal without a plan is just a wish"
-            imgSrc={Pbhomes}
+            imgSrc={data.pbHomes.childImageSharp.fluid}
             imgAlt="Pacific Beach Homes Real Estate"
           />
           <Project
             title="R.H. Bishop Books"
             projLink="https://www.rhbishopbooks.com/"
             desc="You deserve good things. With a whooping 10-15% interest rate per annum, grow your savings on your own terms with our completely automated process"
-            imgSrc={Bishop}
+            imgSrc={data.bishop.childImageSharp.fluid}
             imgAlt="R.H. Bishop Books"
           />
           <Project
             title="Ravenous"
             projLink="https://ravenoussearch.netlify.app/"
             desc="You deserve good things. With a whooping 10-15% interest rate per annum, grow your savings on your own terms with our completely automated process"
-            imgSrc={Ravenous}
+            imgSrc={data.ravenous.childImageSharp.fluid}
             imgAlt="Ravenous"
           />
           <Project
             title="Travel"
             projLink="https://travel.ryanpearson.website/"
             desc="You deserve good things. With a whooping 10-15% interest rate per annum, grow your savings on your own terms with our completely automated process"
-            imgSrc={Travel}
+            imgSrc={data.travel.childImageSharp.fluid}
             imgAlt="Travel"
           />
           <Project
             title="Chiggy Bank"
             projLink="https://chiggybank.herokuapp.com/"
             desc="Chiggy Bank is a piggy bank for chickens. Test your theories on investing with fake money."
-            imgSrc={Chiggy}
+            imgSrc={data.chiggy.childImageSharp.fluid}
             imgAlt="Chiggy Bank"
           />
         </Stack>
@@ -377,3 +425,16 @@ const Index = () => {
 }
 
 export default Index
+
+// export const query = graphql`
+//   query MyQuery {
+//     file(relativePath: { eq: RyanHeadshot }) {
+//       childImageSharp {
+//         # Specify the image processing specifications right in the query.
+//         fluid {
+//           ...GatsbyImageSharpFluid
+//         }
+//       }
+//     }
+//   }
+// `
