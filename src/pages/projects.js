@@ -1,7 +1,9 @@
 import React from "react"
+import { graphql } from "gatsby"
+import { Stack, Heading } from "@chakra-ui/react"
+
 import Layout from "../components/layout"
 import Project from "../components/project"
-import { Stack, Heading } from "@chakra-ui/react"
 import "../assets/projects.scss"
 import SEO from "../components/seo"
 import FeaturedImage from "../assets/images/pearson-digital-marketing.png"

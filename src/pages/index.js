@@ -9,16 +9,16 @@ import {
   Flex,
 } from "@chakra-ui/react"
 import { motion } from "framer-motion"
+import Img from "gatsby-image"
+import { graphql } from "gatsby"
+import { ArrowForwardIcon } from "@chakra-ui/icons"
+
 import "../assets/home.scss"
 import { SiteLink as Link } from "../components/Link"
 import Layout from "../components/layout"
 import Project from "../components/project"
 import useWindowDimensions from "../utils/window-dimensions"
 import SEO from "../components/seo"
-import Img from "gatsby-image"
-import { graphql } from "gatsby"
-
-import { ArrowForwardIcon } from "@chakra-ui/icons"
 import FeaturedImage from "../assets/images/pearson-digital-marketing.png"
 
 const ArrowLink = motion.custom(Link)
