@@ -200,7 +200,7 @@ const Index = ({ data }) => {
           >
             websites, content, seo, ppc and social media management
           </Text>
-          <ButtonGroup spacing="8" py="4">
+          <ButtonGroup spacing={{ base: "none", md: "8" }} py="4">
             <Link href="/projects" _hover={{ textDecoration: "none" }}>
               <Button size="lg">View Projects</Button>
             </Link>
@@ -280,6 +280,17 @@ const Index = ({ data }) => {
             imgAlt="Chiggy Bank"
           />
         </Stack>
+        <Flex
+          mt={["24", "32", "40"]}
+          // ml={[0, 0, "32"]}
+          justifyContent="center"
+        >
+          <Link href="/projects" _hover={{ textDecoration: "none" }}>
+            <Button rightIcon={<ArrowForwardIcon />} size="lg">
+              View all Projects
+            </Button>
+          </Link>
+        </Flex>
       </Box>
       {/* Services section  */}
       <Box py={["12", "16", "20"]} as="section" className="services">
@@ -291,12 +302,12 @@ const Index = ({ data }) => {
               pb={["4", "4", "8"]}
               maxWidth={{ base: "100%", lg: "600px" }}
             >
-              We provide custom website development for any type of business.
-              This includes a free consultation and feedback on your current
-              digital footprint. After you have a beautiful and fast website, we
-              provide content, SEO and lead acquisition services. This can
-              include Google Ads, Facebook Ads, social media management and
-              landing page configuration.
+              We provide custom website development for any type or size of
+              business. This includes a free consultation and feedback on your
+              current digital footprint. After you have a beautiful and fast
+              website, we provide content, SEO and lead acquisition services.
+              This can include Google Ads, Facebook Ads, social media management
+              and landing page configuration.
             </Text>
             <Link href="/services" _hover={{ textDecoration: "none" }}>
               <Button size="lg" rightIcon={<ArrowForwardIcon />}>
