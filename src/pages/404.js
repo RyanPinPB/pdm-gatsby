@@ -1,11 +1,23 @@
-import React from 'react'
-import { Heading, Box } from '@chakra-ui/react';
-import Layout from '../components/layout';
+import React from "react"
+import { Heading, Flex } from "@chakra-ui/react"
+import Layout from "../components/layout"
+import { Image } from "@chakra-ui/react"
+import Bernie from "../assets/images/bernie.png"
 
-export default () => (
-    <Layout>
-        <Box>
-            <Heading as="h1" size="xl">Oops, that's a 404</Heading>
-        </Box>
-    </Layout>
+const NotFound = (data) => (
+  <Layout>
+    <Flex direction="column" align="center" justify="center" py="20">
+      <Heading as="h1" size="xl">
+        Sorry, we can't find that page
+      </Heading>
+      <Image
+        boxSize="250px"
+        objectFit="contain"
+        src={Bernie}
+        alt="Bernie Sandres innoguration"
+      />
+    </Flex>
+  </Layout>
 )
+
+export default NotFound

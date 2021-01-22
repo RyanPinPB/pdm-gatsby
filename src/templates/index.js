@@ -11,7 +11,7 @@ import { normalizePath } from "../utils/get-url-path"
 import SEO from "../components/seo"
 import FeaturedImage from "../assets/images/pearson-digital-marketing.png"
 
-export default ({ data, pageContext }) => (
+const Blog = ({ data, pageContext }) => (
   <Layout>
     <SEO
       title="Blog | Pearson Digital Marketing"
@@ -129,3 +129,5 @@ export const query = graphql`
     }
   }
 `
+
+export default Blog
