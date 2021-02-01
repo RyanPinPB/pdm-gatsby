@@ -18,8 +18,8 @@
   },
   "dependencies": {
     "@chakra-ui/gatsby-plugin": "^1.0.1",
-    "@chakra-ui/icons": "^1.0.3",
-    "@chakra-ui/react": "^1.1.5",
+    "@chakra-ui/icons": "^1.0.4",
+    "@chakra-ui/react": "^1.2.1",
     "@emotion/react": "^11.1.4",
     "@emotion/styled": "^11.0.0",
     "add": "^2.0.6",
@@ -35,7 +35,7 @@
     "gatsby-plugin-react-helmet": "^3.9.0",
     "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-sass": "^2.8.0",
-    "gatsby-plugin-sharp": "^2.13.1",
+    "gatsby-plugin-sharp": "^2.13.4",
     "gatsby-plugin-smoothscroll": "^1.2.0",
     "gatsby-source-filesystem": "^2.10.0",
     "gatsby-transformer-sharp": "2.6.0",
@@ -46,7 +46,7 @@
     "react-helmet": "^6.1.0",
     "react-icons": "^3.11.0",
     "react-paginate": "^6.5.0",
-    "smooth-scrollbar": "^8.5.3",
+    "smooth-scrollbar": "^8.6.0",
     "yarn": "^1.22.10",
     "yup": "^0.29.3"
   },

@@ -14,7 +14,7 @@ const NotFound = (data) => (
         boxSize="250px"
         objectFit="contain"
         src={Bernie}
-        alt="Bernie Sandres innoguration"
+        alt="Bernie Sanders innoguration"
       />
     </Flex>
   </Layout>

@@ -30,35 +30,35 @@ export const query = graphql`
     ryanHeadshot: file(relativePath: { eq: "ryan-headshot-fade.png" }) {
       childImageSharp {
         fluid(maxWidth: 265, maxHeight: 295) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
     samHeadshot: file(relativePath: { eq: "sam-headshot-fade.png" }) {
       childImageSharp {
         fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
     pbHomes: file(relativePath: { eq: "projects/pbh-desktop-phone-desk.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
+        fluid(maxWidth: 1400) {
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
     bishop: file(relativePath: { eq: "projects/bishop-iMac-blue.png" }) {
       childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
+        fluid(maxWidth: 1400) {
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
     ravenous: file(relativePath: { eq: "projects/ravenous-macbook-desk.png" }) {
       childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
+        fluid(maxWidth: 1400) {
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
@@ -66,15 +66,15 @@ export const query = graphql`
       relativePath: { eq: "projects/travel-imac-laptop-light.png" }
     ) {
       childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
+        fluid(maxWidth: 1400) {
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
     chiggy: file(relativePath: { eq: "projects/chiggybank.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
+        fluid(maxWidth: 1400) {
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
@@ -133,6 +133,7 @@ const Index = ({ data }) => {
           <Img
             className="ryan-pearson"
             fluid={data.ryanHeadshot.childImageSharp.fluid}
+            loading="eager"
             alt="Ryan Pearson"
             style={{
               display: "flex",
@@ -153,6 +154,7 @@ const Index = ({ data }) => {
               className="sam-pearson"
               fluid={data.samHeadshot.childImageSharp.fluid}
               alt="Sam Pearson"
+              loading="eager"
               style={{
                 display: "flex",
                 alignItems: "baseline",
@@ -225,6 +227,7 @@ const Index = ({ data }) => {
           <Img
             fluid={data.samHeadshot.childImageSharp.fluid}
             alt="Sam Pearson"
+            loading="eager"
             style={{
               width: "100%",
               maxWidth: "400px",
